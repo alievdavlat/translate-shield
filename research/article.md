@@ -117,7 +117,7 @@ Download counts in this niche are spiky enough to be worth little. The lint plug
 
 ## The library
 
-`translate-shield` is what this study produced: dependency-free, about 13 kB packed, entry points `translate-shield` and `translate-shield/react`. It mirrors the new value into the translator's wrapper rather than restoring the original, which is where the 0ms comes from. On Edge and Firefox it has nothing to do.
+`translate-shield` is what this study produced: dependency-free, about 14 kB packed, entry points `translate-shield` and `translate-shield/react`. It mirrors the new value into the translator's wrapper rather than restoring the original, which is where the 0ms comes from. On Edge and Firefox it has nothing to do.
 
 Head-to-head in real Chrome, page translated to Dutch, React writing `There are 7 lights!` onto the original detached node, both libraries verified installed by inspecting patched `Node.prototype` methods (`research/head-to-head-real-chrome.json`):
 
