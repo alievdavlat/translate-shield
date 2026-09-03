@@ -13,7 +13,12 @@ declare global {
         value: string,
       ) => Promise<{ nodeWasConnected?: boolean; visibleAfter?: string }>
     }
-    TranslateShield: { initTranslateShield: (options?: unknown) => unknown }
+    TranslateShield: {
+      initTranslateShield: (options?: unknown) => {
+        stop: () => void
+        conflicts: () => string[]
+      }
+    }
     __competitor: { installTranslationResilience: () => unknown }
     google: {
       translate: {

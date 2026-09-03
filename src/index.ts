@@ -1,3 +1,4 @@
+import { findConflicts } from './core/conflicts'
 import { patchDom } from './core/patch-dom'
 import { startObserver } from './core/observer'
 import { releaseInterceptors } from './core/registry'
@@ -10,6 +11,7 @@ import type {
 } from './core/types'
 
 export type { RecoveredError, ShieldHandle, ShieldOptions, TranslationInfo, TranslatorEngine }
+export type { PatchedSurface } from './core/conflicts'
 export { mergeIntoTranslated } from './core/merge-text'
 
 const DEFAULT_WRAPPER_TAGS: ReadonlyArray<string> = []
@@ -18,6 +20,7 @@ const inertHandle: ShieldHandle = {
   stop: () => undefined,
   isTranslated: () => false,
   engine: () => null,
+  conflicts: () => [],
 }
 
 let activeHandle: ShieldHandle | null = null
@@ -40,6 +43,16 @@ export const initTranslateShield = (options: ShieldOptions = {}): ShieldHandle =
 
   let translated = false
   let engine: TranslatorEngine | null = null
+
+  const conflicts = findConflicts()
+  if (conflicts.length > 0) {
+    options.onConflict?.(conflicts)
+    console.warn(
+      '[translate-shield] another shim already replaced ' +
+        conflicts.join(', ') +
+        '. Both will run, but only one repair strategy can win and the other silently does nothing. Install one.',
+    )
+  }
 
   const report = (error: RecoveredError): void => {
     options.onRecoveredError?.(error)
@@ -73,6 +86,7 @@ export const initTranslateShield = (options: ShieldOptions = {}): ShieldHandle =
     },
     isTranslated: () => translated,
     engine: () => engine,
+    conflicts: () => conflicts,
   }
 
   return activeHandle

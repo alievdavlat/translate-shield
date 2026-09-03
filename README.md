@@ -25,7 +25,7 @@ initTranslateShield()
 ```
 
 The whole setup. No-op on the server, armed only after a translator rewrites the page, inert on
-engines that do not need it. No dependencies, 11.8 kB packed.
+engines that do not need it. No dependencies, 13.3 kB packed.
 
 Firefox and Edge readers do not hit this bug. Check [Browser support](#browser-support) first.
 
@@ -122,10 +122,16 @@ Idle on the server and on the first client render, so no hydration mismatch. `en
 | `root` | `Element` | `document.body` | Subtree to observe |
 | `wrapperTags` | `string[]` | `[]` | Extra wrapper tag names to recognise beyond the built-in fingerprints |
 | `onTranslationDetected` | `(info: TranslationInfo) => void` | none | Called once, with `lang`, `engine`, and `wrapperTag` |
-| `onRecoveredError` | `(error: RecoveredError) => void` | none | Called when `removeChild` or `insertBefore` was redirected instead of throwing |
+| `onRecoveredError` | `(error: RecoveredError) => void` | none | Called when `removeChild`, `insertBefore` or `replaceChild` was redirected instead of throwing |
+| `onConflict` | `(surfaces: PatchedSurface[]) => void` | none | Called at install when another shim has already replaced a DOM surface |
 | `debug` | `boolean` | `false` | Log every detection and recovery to the console |
 
-`ShieldHandle` carries `stop()`, `isTranslated()`, and `engine()`. On the server it is inert.
+`ShieldHandle` carries `stop()`, `isTranslated()`, `engine()`, and `conflicts()`. On the server it
+is inert.
+
+Two shims on one page is a silent draw, not a crash: whichever repairs second decides, and the
+other quietly does nothing. `conflicts()` names any DOM surface already replaced when the shield
+installed, and a console warning fires whether or not you pass `onConflict`.
 
 ### `mergeIntoTranslated(previousSource, nextSource, translated, locale): string`
 

@@ -1,0 +1,12 @@
+[
+  {
+    "shield": false,
+    "before": "Er zijn 4 lampen!",
+    "after": "Er zijn 4 lampen!"
+  },
+  {
+    "shield": true,
+    "before": "Er zijn 4 lampen!",
+    "after": "Er zijn 5 lampen!"
+  }
+]

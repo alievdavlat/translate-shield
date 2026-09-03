@@ -1,3 +1,5 @@
+import type { PatchedSurface } from './conflicts'
+
 export type TranslatorEngine = 'google' | 'yandex' | 'edge' | 'firefox'
 
 export interface TranslationInfo {
@@ -7,7 +9,7 @@ export interface TranslationInfo {
 }
 
 export interface RecoveredError {
-  method: 'removeChild' | 'insertBefore'
+  method: 'removeChild' | 'insertBefore' | 'replaceChild'
   redirected: boolean
 }
 
@@ -16,6 +18,7 @@ export interface ShieldOptions {
   wrapperTags?: string[]
   onTranslationDetected?: (info: TranslationInfo) => void
   onRecoveredError?: (error: RecoveredError) => void
+  onConflict?: (surfaces: PatchedSurface[]) => void
   debug?: boolean
 }
 
@@ -23,4 +26,5 @@ export interface ShieldHandle {
   stop: () => void
   isTranslated: () => boolean
   engine: () => TranslatorEngine | null
+  conflicts: () => PatchedSurface[]
 }

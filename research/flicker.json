@@ -4,35 +4,35 @@
     "updates": [
       {
         "value": 5,
-        "sourceLanguageSamples": 3,
+        "sourceLanguageSamples": 2,
         "totalSamples": 25,
-        "sourceLanguageMs": 150,
+        "sourceLanguageMs": 100,
         "finalText": "Er zijn 5 lampen!"
       },
       {
         "value": 6,
-        "sourceLanguageSamples": 4,
+        "sourceLanguageSamples": 3,
         "totalSamples": 25,
-        "sourceLanguageMs": 200,
+        "sourceLanguageMs": 150,
         "finalText": "Er zijn 6 lampen!"
       },
       {
         "value": 7,
-        "sourceLanguageSamples": 4,
+        "sourceLanguageSamples": 3,
         "totalSamples": 25,
-        "sourceLanguageMs": 200,
+        "sourceLanguageMs": 150,
         "finalText": "Er zijn 7 lampen!"
       },
       {
         "value": 8,
-        "sourceLanguageSamples": 3,
+        "sourceLanguageSamples": 2,
         "totalSamples": 25,
-        "sourceLanguageMs": 150,
+        "sourceLanguageMs": 100,
         "finalText": "Er zijn 8 lampen!"
       }
     ],
-    "totalSourceLanguageMs": 700,
-    "worstUpdateMs": 200
+    "totalSourceLanguageMs": 500,
+    "worstUpdateMs": 150
   },
   {
     "strategy": "mirror into the wrapper",

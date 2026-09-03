@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { StaleValues } from './cases/StaleValues'
 import { CrashCases } from './cases/CrashCases'
+import { ShadowValue } from './cases/ShadowValue'
 import { simulateTranslate } from './simulate-translate'
 
 const NEXT_PRICE = '29.99'
@@ -50,6 +51,7 @@ export const App = () => {
       <div id="cases">
         <StaleValues count={count} price={price} />
         <CrashCases visible={visible} expanded={expanded} count={count} />
+        <ShadowValue count={count} />
       </div>
     </main>
   )

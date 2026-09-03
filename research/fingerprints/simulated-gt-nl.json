@@ -1,7 +1,7 @@
 {
   "schema": "translate-shield/engine-fingerprint/1",
   "meta": {
-    "recordedAtIso": "2026-09-02T11:28:08.222Z",
+    "recordedAtIso": "2026-09-03T06:36:55.782Z",
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
     "brands": [
       "Not=A?Brand 99",
@@ -25,7 +25,7 @@
     "markersFound": [
       "<font>"
     ],
-    "firstForeignMutationAt": 1037.4,
+    "firstForeignMutationAt": 1072,
     "probes": [
       {
         "id": "simple",
@@ -364,7 +364,7 @@
       "restoredNodeValue": "There are 4 lights!",
       "restoredNodeStillHeldSourceText": false,
       "restoredText": "There are 4 lights! (status)",
-      "retranslatedAfterMs": 146.8,
+      "retranslatedAfterMs": 152,
       "neededProvocation": false,
       "textAfter": "Er zijn 4 lampen! (status)",
       "retranslated": true
@@ -373,7 +373,7 @@
       "applicable": true,
       "patienceMs": 6000,
       "inserted": "There are 8 lights added late!",
-      "translatedAfterMs": 148.2,
+      "translatedAfterMs": 148.1,
       "neededProvocation": false,
       "textAfter": "Er zijn 8 lampen toegevoegd laat!",
       "translated": true
@@ -390,7 +390,7 @@
   },
   "mutations": [
     {
-      "t": 1037.4,
+      "t": 1072,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-arm",
       "targetTag": "BUTTON",
@@ -399,7 +399,7 @@
       "value": ""
     },
     {
-      "t": 1037.4,
+      "t": 1072,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-capture",
       "targetTag": "BUTTON",
@@ -408,7 +408,7 @@
       "value": null
     },
     {
-      "t": 1037.4,
+      "t": 1072.1,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -427,7 +427,7 @@
       ]
     },
     {
-      "t": 1037.5,
+      "t": 1072.1,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -436,7 +436,7 @@
       "value": "status status-armed"
     },
     {
-      "t": 1059.5,
+      "t": 1087.7,
       "type": "childList",
       "target": "[simple]",
       "targetTag": "DIV",
@@ -454,7 +454,7 @@
       ]
     },
     {
-      "t": 1059.6,
+      "t": 1087.7,
       "type": "childList",
       "target": "[simple]",
       "targetTag": "DIV",
@@ -468,7 +468,7 @@
       "added": []
     },
     {
-      "t": 1059.6,
+      "t": 1087.7,
       "type": "childList",
       "target": "[interpolated]",
       "targetTag": "DIV",
@@ -486,7 +486,7 @@
       ]
     },
     {
-      "t": 1059.6,
+      "t": 1087.7,
       "type": "childList",
       "target": "[interpolated]",
       "targetTag": "DIV",
@@ -500,7 +500,7 @@
       "added": []
     },
     {
-      "t": 1059.8,
+      "t": 1087.7,
       "type": "childList",
       "target": "[interpolated]",
       "targetTag": "DIV",
@@ -518,7 +518,7 @@
       ]
     },
     {
-      "t": 1059.8,
+      "t": 1087.8,
       "type": "childList",
       "target": "[interpolated]",
       "targetTag": "DIV",
@@ -532,7 +532,7 @@
       "added": []
     },
     {
-      "t": 1059.9,
+      "t": 1087.8,
       "type": "childList",
       "target": "[interpolated]",
       "targetTag": "DIV",
@@ -550,7 +550,7 @@
       ]
     },
     {
-      "t": 1059.9,
+      "t": 1087.8,
       "type": "childList",
       "target": "[interpolated]",
       "targetTag": "DIV",
@@ -564,7 +564,7 @@
       "added": []
     },
     {
-      "t": 1059.9,
+      "t": 1087.8,
       "type": "childList",
       "target": "[number-only]",
       "targetTag": "DIV",
@@ -582,7 +582,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.8,
       "type": "childList",
       "target": "[number-only]",
       "targetTag": "DIV",
@@ -596,7 +596,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.8,
       "type": "childList",
       "target": "[conditional]",
       "targetTag": "DIV",
@@ -614,7 +614,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.8,
       "type": "childList",
       "target": "[conditional]",
       "targetTag": "DIV",
@@ -628,7 +628,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.8,
       "type": "childList",
       "target": "[conditional] > span",
       "targetTag": "SPAN",
@@ -646,7 +646,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.8,
       "type": "childList",
       "target": "[conditional] > span",
       "targetTag": "SPAN",
@@ -660,7 +660,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested]",
       "targetTag": "DIV",
@@ -678,7 +678,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested]",
       "targetTag": "DIV",
@@ -692,7 +692,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested] > b",
       "targetTag": "B",
@@ -710,7 +710,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested] > b",
       "targetTag": "B",
@@ -724,7 +724,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested]",
       "targetTag": "DIV",
@@ -742,7 +742,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested]",
       "targetTag": "DIV",
@@ -756,7 +756,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested] > i",
       "targetTag": "I",
@@ -774,7 +774,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested] > i",
       "targetTag": "I",
@@ -788,7 +788,7 @@
       "added": []
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested]",
       "targetTag": "DIV",
@@ -806,7 +806,7 @@
       ]
     },
     {
-      "t": 1060,
+      "t": 1087.9,
       "type": "childList",
       "target": "[inline-nested]",
       "targetTag": "DIV",
@@ -820,7 +820,7 @@
       "added": []
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[list] > ul > li",
       "targetTag": "LI",
@@ -838,7 +838,7 @@
       ]
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[list] > ul > li",
       "targetTag": "LI",
@@ -852,7 +852,7 @@
       "added": []
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[list] > ul > li",
       "targetTag": "LI",
@@ -870,7 +870,7 @@
       ]
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[list] > ul > li",
       "targetTag": "LI",
@@ -884,7 +884,7 @@
       "added": []
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[list] > ul > li",
       "targetTag": "LI",
@@ -902,7 +902,7 @@
       ]
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[list] > ul > li",
       "targetTag": "LI",
@@ -916,7 +916,7 @@
       "added": []
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[attributes] > span",
       "targetTag": "SPAN",
@@ -934,7 +934,7 @@
       ]
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[attributes] > span",
       "targetTag": "SPAN",
@@ -948,7 +948,7 @@
       "added": []
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[plural-one]",
       "targetTag": "DIV",
@@ -966,7 +966,7 @@
       ]
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[plural-one]",
       "targetTag": "DIV",
@@ -980,7 +980,7 @@
       "added": []
     },
     {
-      "t": 1060.1,
+      "t": 1087.9,
       "type": "childList",
       "target": "[plural-many]",
       "targetTag": "DIV",
@@ -998,7 +998,7 @@
       ]
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[plural-many]",
       "targetTag": "DIV",
@@ -1012,7 +1012,7 @@
       "added": []
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[digits]",
       "targetTag": "DIV",
@@ -1030,7 +1030,7 @@
       ]
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[digits]",
       "targetTag": "DIV",
@@ -1044,7 +1044,7 @@
       "added": []
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[burst-target]",
       "targetTag": "DIV",
@@ -1062,7 +1062,7 @@
       ]
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[burst-target]",
       "targetTag": "DIV",
@@ -1076,7 +1076,7 @@
       "added": []
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[dynamic]",
       "targetTag": "DIV",
@@ -1094,7 +1094,7 @@
       ]
     },
     {
-      "t": 1060.2,
+      "t": 1087.9,
       "type": "childList",
       "target": "[dynamic]",
       "targetTag": "DIV",
@@ -1108,7 +1108,7 @@
       "added": []
     },
     {
-      "t": 1102.5,
+      "t": 1138.7,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-experiments",
       "targetTag": "BUTTON",
@@ -1117,7 +1117,7 @@
       "value": null
     },
     {
-      "t": 1102.6,
+      "t": 1138.7,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-save",
       "targetTag": "BUTTON",
@@ -1126,7 +1126,7 @@
       "value": null
     },
     {
-      "t": 1102.6,
+      "t": 1138.7,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-export",
       "targetTag": "BUTTON",
@@ -1135,7 +1135,7 @@
       "value": null
     },
     {
-      "t": 1102.6,
+      "t": 1138.7,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-copy",
       "targetTag": "BUTTON",
@@ -1144,7 +1144,7 @@
       "value": null
     },
     {
-      "t": 1102.7,
+      "t": 1138.7,
       "type": "childList",
       "target": "html > body > main > div#results",
       "targetTag": "DIV",
@@ -1162,7 +1162,7 @@
       ]
     },
     {
-      "t": 1102.7,
+      "t": 1138.7,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -1181,7 +1181,7 @@
       ]
     },
     {
-      "t": 1102.7,
+      "t": 1138.7,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -1190,7 +1190,7 @@
       "value": "status status-bad"
     },
     {
-      "t": 1152.9,
+      "t": 1187.4,
       "type": "attributes",
       "target": "html > body > section > div > button#btn-experiments",
       "targetTag": "BUTTON",
@@ -1199,7 +1199,7 @@
       "value": ""
     },
     {
-      "t": 1152.9,
+      "t": 1187.4,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -1218,7 +1218,7 @@
       ]
     },
     {
-      "t": 1152.9,
+      "t": 1187.4,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -1227,11 +1227,11 @@
       "value": "status status-busy"
     },
     {
-      "t": 1306.6,
+      "t": 1351.4,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 153.8,
+      "sinceSelfOpMs": 164.2,
       "removed": [],
       "added": [
         {
@@ -1245,11 +1245,11 @@
       ]
     },
     {
-      "t": 1306.8,
+      "t": 1351.9,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 154,
+      "sinceSelfOpMs": 164.6,
       "removed": [
         {
           "kind": "text",
@@ -1259,11 +1259,11 @@
       "added": []
     },
     {
-      "t": 1306.8,
+      "t": 1351.9,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 154,
+      "sinceSelfOpMs": 164.6,
       "removed": [],
       "added": [
         {
@@ -1277,11 +1277,11 @@
       ]
     },
     {
-      "t": 1306.8,
+      "t": 1352,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 154,
+      "sinceSelfOpMs": 164.7,
       "removed": [
         {
           "kind": "text",
@@ -1291,11 +1291,11 @@
       "added": []
     },
     {
-      "t": 1540.3,
+      "t": 1572.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 387.5,
+      "sinceSelfOpMs": 385.1,
       "removed": [
         {
           "kind": "text",
@@ -1310,11 +1310,11 @@
       ]
     },
     {
-      "t": 2038.6,
+      "t": 2077.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 885.8,
+      "sinceSelfOpMs": 890.6,
       "removed": [
         {
           "kind": "text",
@@ -1329,11 +1329,11 @@
       ]
     },
     {
-      "t": 2545.1,
+      "t": 2574.3,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1392.4,
+      "sinceSelfOpMs": 1387,
       "removed": [
         {
           "kind": "text",
@@ -1348,11 +1348,11 @@
       ]
     },
     {
-      "t": 3043.6,
+      "t": 3083.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1890.8,
+      "sinceSelfOpMs": 1896.5,
       "removed": [
         {
           "kind": "text",
@@ -1367,11 +1367,11 @@
       ]
     },
     {
-      "t": 3540.4,
+      "t": 3579.5,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2387.6,
+      "sinceSelfOpMs": 2392.2,
       "removed": [
         {
           "kind": "text",
@@ -1386,11 +1386,11 @@
       ]
     },
     {
-      "t": 4052,
+      "t": 4077.9,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2899.2,
+      "sinceSelfOpMs": 2890.6,
       "removed": [
         {
           "kind": "text",
@@ -1405,11 +1405,11 @@
       ]
     },
     {
-      "t": 4538.8,
+      "t": 4575.5,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 3386.1,
+      "sinceSelfOpMs": 3388.2,
       "removed": [
         {
           "kind": "text",
@@ -1424,11 +1424,11 @@
       ]
     },
     {
-      "t": 5047.4,
+      "t": 5082.3,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 3894.6,
+      "sinceSelfOpMs": 3895,
       "removed": [
         {
           "kind": "text",
@@ -1443,11 +1443,11 @@
       ]
     },
     {
-      "t": 5543.1,
+      "t": 5576.7,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 4390.3,
+      "sinceSelfOpMs": 4389.4,
       "removed": [
         {
           "kind": "text",
@@ -1462,11 +1462,11 @@
       ]
     },
     {
-      "t": 6039.9,
+      "t": 6075,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 4887.1,
+      "sinceSelfOpMs": 4887.8,
       "removed": [
         {
           "kind": "text",
@@ -1481,11 +1481,11 @@
       ]
     },
     {
-      "t": 6538.6,
+      "t": 6586.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 5385.8,
+      "sinceSelfOpMs": 5399.5,
       "removed": [
         {
           "kind": "text",
@@ -1500,11 +1500,11 @@
       ]
     },
     {
-      "t": 7037.5,
+      "t": 7080.7,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 5884.7,
+      "sinceSelfOpMs": 5893.4,
       "removed": [
         {
           "kind": "text",
@@ -1519,7 +1519,7 @@
       ]
     },
     {
-      "t": 7176.4,
+      "t": 7203.9,
       "type": "childList",
       "target": "html > body > main > div#results",
       "targetTag": "DIV",
@@ -1537,7 +1537,7 @@
       ]
     },
     {
-      "t": 7176.4,
+      "t": 7204,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -1556,7 +1556,7 @@
       ]
     },
     {
-      "t": 7176.4,
+      "t": 7204,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -1565,11 +1565,11 @@
       "value": "status status-busy"
     },
     {
-      "t": 7176.4,
+      "t": 7204,
       "type": "childList",
       "target": "[number-only] > font",
       "targetTag": "FONT",
-      "sinceSelfOpMs": 0.1,
+      "sinceSelfOpMs": 0.2,
       "removed": [
         {
           "kind": "text",
@@ -1584,11 +1584,11 @@
       ]
     },
     {
-      "t": 7330.7,
+      "t": 7358.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 154.4,
+      "sinceSelfOpMs": 154.8,
       "removed": [],
       "added": [
         {
@@ -1602,11 +1602,11 @@
       ]
     },
     {
-      "t": 7330.8,
+      "t": 7358.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 154.5,
+      "sinceSelfOpMs": 154.9,
       "removed": [
         {
           "kind": "text",
@@ -1616,11 +1616,11 @@
       "added": []
     },
     {
-      "t": 7330.8,
+      "t": 7358.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 154.5,
+      "sinceSelfOpMs": 154.9,
       "removed": [],
       "added": [
         {
@@ -1634,11 +1634,11 @@
       ]
     },
     {
-      "t": 7330.8,
+      "t": 7358.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 154.5,
+      "sinceSelfOpMs": 154.9,
       "removed": [
         {
           "kind": "text",
@@ -1648,11 +1648,11 @@
       "added": []
     },
     {
-      "t": 7547.1,
+      "t": 7572.9,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 370.9,
+      "sinceSelfOpMs": 369,
       "removed": [
         {
           "kind": "text",
@@ -1667,11 +1667,11 @@
       ]
     },
     {
-      "t": 8044.5,
+      "t": 8084.3,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 868.3,
+      "sinceSelfOpMs": 880.5,
       "removed": [
         {
           "kind": "text",
@@ -1686,11 +1686,11 @@
       ]
     },
     {
-      "t": 8541.2,
+      "t": 8582,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1364.9,
+      "sinceSelfOpMs": 1378.1,
       "removed": [
         {
           "kind": "text",
@@ -1705,11 +1705,11 @@
       ]
     },
     {
-      "t": 9040.2,
+      "t": 9077.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1863.9,
+      "sinceSelfOpMs": 1873.5,
       "removed": [
         {
           "kind": "text",
@@ -1724,11 +1724,11 @@
       ]
     },
     {
-      "t": 9545.1,
+      "t": 9574.2,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2368.9,
+      "sinceSelfOpMs": 2370.3,
       "removed": [
         {
           "kind": "text",
@@ -1743,11 +1743,11 @@
       ]
     },
     {
-      "t": 10042.9,
+      "t": 10084.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2866.6,
+      "sinceSelfOpMs": 2880.7,
       "removed": [
         {
           "kind": "text",
@@ -1762,11 +1762,11 @@
       ]
     },
     {
-      "t": 10538.1,
+      "t": 10580.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 3361.8,
+      "sinceSelfOpMs": 3376.5,
       "removed": [
         {
           "kind": "text",
@@ -1781,11 +1781,11 @@
       ]
     },
     {
-      "t": 11051.2,
+      "t": 11075.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 3874.9,
+      "sinceSelfOpMs": 3871.6,
       "removed": [
         {
           "kind": "text",
@@ -1800,11 +1800,11 @@
       ]
     },
     {
-      "t": 11549.8,
+      "t": 11572.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 4373.6,
+      "sinceSelfOpMs": 4368.9,
       "removed": [
         {
           "kind": "text",
@@ -1819,11 +1819,11 @@
       ]
     },
     {
-      "t": 12052.4,
+      "t": 12082.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 4876.2,
+      "sinceSelfOpMs": 4878.7,
       "removed": [
         {
           "kind": "text",
@@ -1838,11 +1838,11 @@
       ]
     },
     {
-      "t": 12538.9,
+      "t": 12578.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 5362.6,
+      "sinceSelfOpMs": 5374.5,
       "removed": [
         {
           "kind": "text",
@@ -1857,11 +1857,11 @@
       ]
     },
     {
-      "t": 13051.9,
+      "t": 13072.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 5875.7,
+      "sinceSelfOpMs": 5868.6,
       "removed": [
         {
           "kind": "text",
@@ -1876,11 +1876,11 @@
       ]
     },
     {
-      "t": 13548.9,
+      "t": 13581,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 358.9,
+      "sinceSelfOpMs": 368.7,
       "removed": [
         {
           "kind": "text",
@@ -1895,11 +1895,11 @@
       ]
     },
     {
-      "t": 14046,
+      "t": 14078.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 856,
+      "sinceSelfOpMs": 866.3,
       "removed": [
         {
           "kind": "text",
@@ -1914,11 +1914,11 @@
       ]
     },
     {
-      "t": 14542.3,
+      "t": 14574.5,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1352.3,
+      "sinceSelfOpMs": 1362.2,
       "removed": [
         {
           "kind": "text",
@@ -1933,11 +1933,11 @@
       ]
     },
     {
-      "t": 15040.3,
+      "t": 15085.5,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1850.2,
+      "sinceSelfOpMs": 1873.2,
       "removed": [
         {
           "kind": "text",
@@ -1952,11 +1952,11 @@
       ]
     },
     {
-      "t": 15552,
+      "t": 15581.3,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2361.9,
+      "sinceSelfOpMs": 2369,
       "removed": [
         {
           "kind": "text",
@@ -1971,11 +1971,11 @@
       ]
     },
     {
-      "t": 16045.8,
+      "t": 16077.1,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2855.8,
+      "sinceSelfOpMs": 2864.8,
       "removed": [
         {
           "kind": "text",
@@ -1990,11 +1990,11 @@
       ]
     },
     {
-      "t": 16543.1,
+      "t": 16574,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 3353,
+      "sinceSelfOpMs": 3361.8,
       "removed": [
         {
           "kind": "text",
@@ -2009,11 +2009,11 @@
       ]
     },
     {
-      "t": 17041.2,
+      "t": 17073.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 3851.1,
+      "sinceSelfOpMs": 3861.4,
       "removed": [
         {
           "kind": "text",
@@ -2028,11 +2028,11 @@
       ]
     },
     {
-      "t": 17552.5,
+      "t": 17573,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 4362.4,
+      "sinceSelfOpMs": 4360.7,
       "removed": [
         {
           "kind": "text",
@@ -2047,11 +2047,11 @@
       ]
     },
     {
-      "t": 18052.1,
+      "t": 18081.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 4862.1,
+      "sinceSelfOpMs": 4869.5,
       "removed": [
         {
           "kind": "text",
@@ -2066,11 +2066,11 @@
       ]
     },
     {
-      "t": 18549.8,
+      "t": 18576,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 5359.8,
+      "sinceSelfOpMs": 5363.7,
       "removed": [
         {
           "kind": "text",
@@ -2085,11 +2085,11 @@
       ]
     },
     {
-      "t": 19044.7,
+      "t": 19081.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 5854.7,
+      "sinceSelfOpMs": 5869.3,
       "removed": [
         {
           "kind": "text",
@@ -2104,11 +2104,11 @@
       ]
     },
     {
-      "t": 19540.2,
+      "t": 19578.4,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 6350.1,
+      "sinceSelfOpMs": 6366.1,
       "removed": [
         {
           "kind": "text",
@@ -2123,11 +2123,11 @@
       ]
     },
     {
-      "t": 19575,
+      "t": 19609.4,
       "type": "childList",
       "target": "html > body > main > div#results",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "removed": [],
       "added": [
         {
@@ -2141,7 +2141,7 @@
       ]
     },
     {
-      "t": 19575.1,
+      "t": 19609.4,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -2160,7 +2160,7 @@
       ]
     },
     {
-      "t": 19575.1,
+      "t": 19609.4,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -2169,7 +2169,7 @@
       "value": "status status-busy"
     },
     {
-      "t": 19575.1,
+      "t": 19609.4,
       "type": "childList",
       "target": "[conditional]",
       "targetTag": "DIV",
@@ -2183,7 +2183,7 @@
       ]
     },
     {
-      "t": 19575.1,
+      "t": 19609.4,
       "type": "childList",
       "target": "[conditional]",
       "targetTag": "DIV",
@@ -2201,11 +2201,11 @@
       "added": []
     },
     {
-      "t": 19726.6,
+      "t": 19765.7,
       "type": "childList",
       "target": "[conditional]",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 151.6,
+      "sinceSelfOpMs": 156.4,
       "removed": [],
       "added": [
         {
@@ -2219,11 +2219,11 @@
       ]
     },
     {
-      "t": 19726.6,
+      "t": 19765.8,
       "type": "childList",
       "target": "[conditional]",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 151.6,
+      "sinceSelfOpMs": 156.5,
       "removed": [
         {
           "kind": "text",
@@ -2233,11 +2233,11 @@
       "added": []
     },
     {
-      "t": 19726.6,
+      "t": 19765.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 151.6,
+      "sinceSelfOpMs": 156.5,
       "removed": [],
       "added": [
         {
@@ -2251,11 +2251,11 @@
       ]
     },
     {
-      "t": 19726.6,
+      "t": 19765.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 151.6,
+      "sinceSelfOpMs": 156.5,
       "removed": [
         {
           "kind": "text",
@@ -2265,11 +2265,11 @@
       "added": []
     },
     {
-      "t": 19726.6,
+      "t": 19765.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 151.6,
+      "sinceSelfOpMs": 156.5,
       "removed": [],
       "added": [
         {
@@ -2283,11 +2283,11 @@
       ]
     },
     {
-      "t": 19726.6,
+      "t": 19765.8,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 151.6,
+      "sinceSelfOpMs": 156.5,
       "removed": [
         {
           "kind": "text",
@@ -2297,11 +2297,11 @@
       "added": []
     },
     {
-      "t": 19726.8,
+      "t": 19765.9,
       "type": "childList",
       "target": "html > body > main > div#results",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "removed": [],
       "added": [
         {
@@ -2315,11 +2315,11 @@
       ]
     },
     {
-      "t": 19726.8,
+      "t": 19765.9,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "removed": [
         {
           "kind": "text",
@@ -2334,20 +2334,20 @@
       ]
     },
     {
-      "t": 19726.8,
+      "t": 19765.9,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "attribute": "class",
       "value": "status status-busy"
     },
     {
-      "t": 19726.8,
+      "t": 19765.9,
       "type": "childList",
       "target": "[dynamic]",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "removed": [],
       "added": [
         {
@@ -2359,11 +2359,11 @@
       ]
     },
     {
-      "t": 19880.7,
+      "t": 19919,
       "type": "childList",
       "target": "[dynamic] > p",
       "targetTag": "P",
-      "sinceSelfOpMs": 154,
+      "sinceSelfOpMs": 153.2,
       "removed": [],
       "added": [
         {
@@ -2377,11 +2377,11 @@
       ]
     },
     {
-      "t": 19880.9,
+      "t": 19919,
       "type": "childList",
       "target": "[dynamic] > p",
       "targetTag": "P",
-      "sinceSelfOpMs": 154.1,
+      "sinceSelfOpMs": 153.3,
       "removed": [
         {
           "kind": "text",
@@ -2391,11 +2391,11 @@
       "added": []
     },
     {
-      "t": 19880.9,
+      "t": 19919.1,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 154.1,
+      "sinceSelfOpMs": 153.3,
       "removed": [],
       "added": [
         {
@@ -2409,11 +2409,11 @@
       ]
     },
     {
-      "t": 19880.9,
+      "t": 19919.1,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 154.1,
+      "sinceSelfOpMs": 153.3,
       "removed": [
         {
           "kind": "text",
@@ -2423,11 +2423,11 @@
       "added": []
     },
     {
-      "t": 19880.9,
+      "t": 19919.1,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 154.1,
+      "sinceSelfOpMs": 153.3,
       "removed": [],
       "added": [
         {
@@ -2441,11 +2441,11 @@
       ]
     },
     {
-      "t": 19880.9,
+      "t": 19919.1,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 154.1,
+      "sinceSelfOpMs": 153.3,
       "removed": [
         {
           "kind": "text",
@@ -2455,11 +2455,11 @@
       "added": []
     },
     {
-      "t": 19881.2,
+      "t": 19919.2,
       "type": "childList",
       "target": "html > body > main > div#results",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "removed": [],
       "added": [
         {
@@ -2473,11 +2473,11 @@
       ]
     },
     {
-      "t": 19881.2,
+      "t": 19919.3,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
-      "sinceSelfOpMs": 0,
+      "sinceSelfOpMs": 0.1,
       "removed": [
         {
           "kind": "text",
@@ -2492,7 +2492,7 @@
       ]
     },
     {
-      "t": 19881.2,
+      "t": 19919.3,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
@@ -2501,11 +2501,11 @@
       "value": "status status-busy"
     },
     {
-      "t": 20035,
+      "t": 20072.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 153.9,
+      "sinceSelfOpMs": 153.5,
       "removed": [],
       "added": [
         {
@@ -2519,11 +2519,11 @@
       ]
     },
     {
-      "t": 20035.1,
+      "t": 20072.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 153.9,
+      "sinceSelfOpMs": 153.5,
       "removed": [
         {
           "kind": "text",
@@ -2533,11 +2533,11 @@
       "added": []
     },
     {
-      "t": 20035.1,
+      "t": 20072.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 153.9,
+      "sinceSelfOpMs": 153.5,
       "removed": [],
       "added": [
         {
@@ -2551,11 +2551,11 @@
       ]
     },
     {
-      "t": 20035.1,
+      "t": 20072.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 153.9,
+      "sinceSelfOpMs": 153.5,
       "removed": [
         {
           "kind": "text",
@@ -2565,11 +2565,11 @@
       "added": []
     },
     {
-      "t": 20050.5,
+      "t": 20074.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 169.3,
+      "sinceSelfOpMs": 155.4,
       "removed": [
         {
           "kind": "text",
@@ -2584,11 +2584,11 @@
       ]
     },
     {
-      "t": 20545.2,
+      "t": 20581.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 664,
+      "sinceSelfOpMs": 662.4,
       "removed": [
         {
           "kind": "text",
@@ -2603,11 +2603,11 @@
       ]
     },
     {
-      "t": 21038.1,
+      "t": 21076.7,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 152.8,
+      "sinceSelfOpMs": 154.2,
       "removed": [
         {
           "kind": "text",
@@ -2622,11 +2622,11 @@
       ]
     },
     {
-      "t": 21551.8,
+      "t": 21572.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 666.5,
+      "sinceSelfOpMs": 650.3,
       "removed": [
         {
           "kind": "text",
@@ -2641,11 +2641,11 @@
       ]
     },
     {
-      "t": 22047.3,
+      "t": 22082.7,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 154.8,
+      "sinceSelfOpMs": 154.9,
       "removed": [
         {
           "kind": "text",
@@ -2660,11 +2660,11 @@
       ]
     },
     {
-      "t": 22546.2,
+      "t": 22576.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 653.7,
+      "sinceSelfOpMs": 648.9,
       "removed": [
         {
           "kind": "text",
@@ -2679,11 +2679,11 @@
       ]
     },
     {
-      "t": 23042.2,
+      "t": 23086.7,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 141.7,
+      "sinceSelfOpMs": 153.1,
       "removed": [
         {
           "kind": "text",
@@ -2698,11 +2698,11 @@
       ]
     },
     {
-      "t": 23539,
+      "t": 23579.5,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 638.6,
+      "sinceSelfOpMs": 645.9,
       "removed": [
         {
           "kind": "text",
@@ -2717,11 +2717,11 @@
       ]
     },
     {
-      "t": 24050.5,
+      "t": 24072.6,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 139.7,
+      "sinceSelfOpMs": 125,
       "removed": [
         {
           "kind": "text",
@@ -2736,11 +2736,11 @@
       ]
     },
     {
-      "t": 24547.5,
+      "t": 24581.5,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 636.7,
+      "sinceSelfOpMs": 633.8,
       "removed": [
         {
           "kind": "text",
@@ -2755,11 +2755,11 @@
       ]
     },
     {
-      "t": 25043.6,
+      "t": 25081.3,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1132.9,
+      "sinceSelfOpMs": 1133.6,
       "removed": [
         {
           "kind": "text",
@@ -2774,11 +2774,11 @@
       ]
     },
     {
-      "t": 25538,
+      "t": 25574.7,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 1627.2,
+      "sinceSelfOpMs": 1627.1,
       "removed": [
         {
           "kind": "text",
@@ -2793,11 +2793,11 @@
       ]
     },
     {
-      "t": 26051.2,
+      "t": 26072.8,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2140.4,
+      "sinceSelfOpMs": 2125.1,
       "removed": [
         {
           "kind": "text",
@@ -2812,11 +2812,11 @@
       ]
     },
     {
-      "t": 26423.6,
+      "t": 26459.5,
       "type": "childList",
       "target": "html > body > main > div#results",
       "targetTag": "DIV",
-      "sinceSelfOpMs": 2512.8,
+      "sinceSelfOpMs": 2511.9,
       "removed": [],
       "added": [
         {
@@ -2830,11 +2830,11 @@
       ]
     },
     {
-      "t": 26423.6,
+      "t": 26459.6,
       "type": "childList",
       "target": "html > body > section > p#status",
       "targetTag": "P",
-      "sinceSelfOpMs": 2512.8,
+      "sinceSelfOpMs": 2511.9,
       "removed": [
         {
           "kind": "text",
@@ -2849,74 +2849,74 @@
       ]
     },
     {
-      "t": 26423.6,
+      "t": 26459.6,
       "type": "attributes",
       "target": "html > body > section > p#status",
       "targetTag": "P",
-      "sinceSelfOpMs": 2512.8,
+      "sinceSelfOpMs": 2511.9,
       "attribute": "class",
       "value": "status status-good"
     },
     {
-      "t": 26536.4,
+      "t": 26540.9,
       "type": "attributes",
       "target": "html > body > section > div > label > input#engine-label",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2625.6,
+      "sinceSelfOpMs": 2593.2,
       "attribute": "style",
       "value": "caret-color: transparent !important;"
     },
     {
-      "t": 26536.4,
+      "t": 26541,
       "type": "attributes",
       "target": "html > body > section > div > label > input#target-language",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2625.6,
+      "sinceSelfOpMs": 2593.3,
       "attribute": "style",
       "value": "caret-color: transparent !important;"
     },
     {
-      "t": 26536.4,
+      "t": 26541,
       "type": "attributes",
       "target": "html > body > section > label > textarea#notes",
       "targetTag": "TEXTAREA",
-      "sinceSelfOpMs": 2625.7,
+      "sinceSelfOpMs": 2593.4,
       "attribute": "style",
       "value": "caret-color: transparent !important;"
     },
     {
-      "t": 26536.5,
+      "t": 26541.1,
       "type": "attributes",
       "target": "html > body > section > textarea#json-output",
       "targetTag": "TEXTAREA",
-      "sinceSelfOpMs": 2625.7,
+      "sinceSelfOpMs": 2593.4,
       "attribute": "style",
       "value": "caret-color: transparent !important;"
     },
     {
-      "t": 26536.5,
+      "t": 26541.1,
       "type": "attributes",
       "target": "[attributes] > input",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2625.7,
+      "sinceSelfOpMs": 2593.4,
       "attribute": "style",
       "value": "caret-color: transparent !important;"
     },
     {
-      "t": 26536.5,
+      "t": 26541.1,
       "type": "attributes",
       "target": "[input-value] > input",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2625.7,
+      "sinceSelfOpMs": 2593.4,
       "attribute": "style",
       "value": "caret-color: transparent !important;"
     },
     {
-      "t": 26537.5,
+      "t": 26581.2,
       "type": "childList",
       "target": "html > body > section > p#counter",
       "targetTag": "P",
-      "sinceSelfOpMs": 2626.7,
+      "sinceSelfOpMs": 2633.6,
       "removed": [
         {
           "kind": "text",
@@ -2931,11 +2931,11 @@
       ]
     },
     {
-      "t": 26700.5,
+      "t": 26735.6,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 2789.7,
+      "sinceSelfOpMs": 2788,
       "removed": [],
       "added": [
         {
@@ -2949,11 +2949,11 @@
       ]
     },
     {
-      "t": 26700.5,
+      "t": 26735.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > h4",
       "targetTag": "H4",
-      "sinceSelfOpMs": 2789.7,
+      "sinceSelfOpMs": 2788,
       "removed": [
         {
           "kind": "text",
@@ -2963,11 +2963,11 @@
       "added": []
     },
     {
-      "t": 26700.5,
+      "t": 26735.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 2789.7,
+      "sinceSelfOpMs": 2788,
       "removed": [],
       "added": [
         {
@@ -2981,11 +2981,11 @@
       ]
     },
     {
-      "t": 26700.5,
+      "t": 26735.7,
       "type": "childList",
       "target": "html > body > main > div#results > div > pre",
       "targetTag": "PRE",
-      "sinceSelfOpMs": 2789.7,
+      "sinceSelfOpMs": 2788,
       "removed": [
         {
           "kind": "text",
@@ -2995,56 +2995,56 @@
       "added": []
     },
     {
-      "t": 26743.6,
+      "t": 26752,
       "type": "attributes",
       "target": "html > body > section > div > label > input#engine-label",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2832.8,
+      "sinceSelfOpMs": 2804.4,
       "attribute": "style",
       "value": ""
     },
     {
-      "t": 26743.6,
+      "t": 26752.1,
       "type": "attributes",
       "target": "html > body > section > div > label > input#target-language",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2832.8,
+      "sinceSelfOpMs": 2804.4,
       "attribute": "style",
       "value": ""
     },
     {
-      "t": 26743.6,
+      "t": 26752.1,
       "type": "attributes",
       "target": "html > body > section > label > textarea#notes",
       "targetTag": "TEXTAREA",
-      "sinceSelfOpMs": 2832.8,
+      "sinceSelfOpMs": 2804.4,
       "attribute": "style",
       "value": ""
     },
     {
-      "t": 26743.6,
+      "t": 26752.1,
       "type": "attributes",
       "target": "html > body > section > textarea#json-output",
       "targetTag": "TEXTAREA",
-      "sinceSelfOpMs": 2832.8,
+      "sinceSelfOpMs": 2804.4,
       "attribute": "style",
       "value": ""
     },
     {
-      "t": 26743.6,
+      "t": 26752.1,
       "type": "attributes",
       "target": "[attributes] > input",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2832.8,
+      "sinceSelfOpMs": 2804.4,
       "attribute": "style",
       "value": ""
     },
     {
-      "t": 26743.6,
+      "t": 26752.1,
       "type": "attributes",
       "target": "[input-value] > input",
       "targetTag": "INPUT",
-      "sinceSelfOpMs": 2832.8,
+      "sinceSelfOpMs": 2804.4,
       "attribute": "style",
       "value": ""
     }
@@ -3053,43 +3053,43 @@
   "mutationsDropped": 0,
   "selfOps": [
     {
-      "at": 1152.8,
+      "at": 1187.3,
       "description": "frameworkWrite simple"
     },
     {
-      "at": 7176.3,
+      "at": 7203.9,
       "description": "wrapperWrite number-only"
     },
     {
-      "at": 13190.1,
+      "at": 13212.3,
       "description": "provoke"
     },
     {
-      "at": 19575,
+      "at": 19609.3,
       "description": "untranslatedWindow conditional"
     },
     {
-      "at": 19726.8,
+      "at": 19765.8,
       "description": "lateContent dynamic"
     },
     {
-      "at": 19881.2,
+      "at": 19919.2,
       "description": "burst burst-target #1"
     },
     {
-      "at": 20885.3,
+      "at": 20922.6,
       "description": "burst burst-target #2"
     },
     {
-      "at": 21892.5,
+      "at": 21927.8,
       "description": "burst burst-target #3"
     },
     {
-      "at": 22900.5,
+      "at": 22933.6,
       "description": "burst burst-target #4"
     },
     {
-      "at": 23910.8,
+      "at": 23947.7,
       "description": "burst burst-target #5"
     }
   ]

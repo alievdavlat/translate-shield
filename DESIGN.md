@@ -107,7 +107,7 @@ refusal is silent.
 One package, two subpath entries: `.` for the runtime, `./react` for `NoTranslate` and
 `useTranslationDetected`, React an optional peer. A monorepo was rejected as two release trains for
 packages with no independent life. Cost: a React-only fix bumps the version for runtime-only
-consumers. Tarball 11.8 kB.
+consumers. Tarball 13.3 kB.
 
 bunchee over tsup. tsup's own README says it is unmaintained, and neither `banner` nor
 `esbuildOptions.banner` applied the client directive in a multi-entry config;
@@ -140,8 +140,8 @@ tooling expecting `docs/` finds nothing, and the raw exports go stale as engines
 | # | Question | What turns on it |
 | - | -------- | ---------------- |
 | 1 | Does `scrollIntoView({block:'nearest'})` wake the translator for an element already fully visible, without moving the page? | Of eleven signals tested from a proven-idle state, `scrollIntoView()` alone woke Chrome, at 158ms. If it fires for a visible element too, the merge-refused path can write source text and hand the sentence back to Google for correct grammar, plural form and number formatting. That makes the fallback better than the incumbent rather than equal to it. Owner: maintainer. |
-| 2 | How do we observe open shadow roots, and what does walking them cost on a large page? | Chrome and Yandex translate inside open shadow roots and detach nodes there, invisible to an observer watching `root`. No shim in this space handles them. Roots attached after install are the harder half. Owner: maintainer. |
-| 3 | What happens when another shim is installed on the same page? | Mirroring into the wrapper and restoring the original are contradictory operations on the same nodes, and both libraries patch the same prototypes. Untested. Options run from warn-once on an already-patched prototype, to refusing to install, to layering rather than patching over. Owner: maintainer. |
+| 2 | What does walking open shadow roots cost on a large page? | The roots are now observed, including ones attached after install, by wrapping `attachShadow`: attaching a root emits no mutation record, so nothing else can see it. Proven against real Chrome in `research/shadow-dom-real-chrome.json`. The cost on a page with many hosts is unmeasured. Owner: maintainer. |
+| 3 | Should the shield refuse to install when another shim is present? | It now detects the surfaces another shim replaced, reports them through `conflicts()` and warns once, then installs anyway. Refusing outright would break a consumer whose bundler pulled a shim in transitively. Whether warning is enough is unanswered. Owner: maintainer. |
 | 4 | What do the in-place engines leave behind in the merged-run detach case? | `detached: 2` on the three-TextNode probe is all that is known for Firefox and Edge. Whether a wrapper exists to mirror into, and whether the freeze is reachable there at all, decides whether the README's "not needed on Edge and Firefox" needs an exception clause. Owner: maintainer. |
 | 5 | Safari. | Needs macOS hardware nobody on this project has. Guessing from the WebKit run is not allowed: that run used Google's bundle, not Safari's own translator. Owner: unassigned. |
 | 6 | Is a per-root patch reachable at all? | No seam has been found short of reimplementing the React host config. An answer retires the largest compromise in the design. Owner: maintainer. |
