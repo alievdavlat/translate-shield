@@ -24,7 +24,10 @@ jobs:
       - run: npm run smoke
       - run: npx publint --strict
       - run: npx @arethetypeswrong/cli --pack .
-      - run: npx playwright test unshielded shielded comparison merge-text shadow-dom conflicts replace-child
+      # Named explicitly. A bare name matches every file containing it, which is how
+      # shadow-dom-real-chrome reached a runner with no display. The specs guard
+      # themselves too, but CI should not be asking for them in the first place.
+      - run: npx playwright test tests/specs/unshielded.spec.ts tests/specs/shielded.spec.ts tests/specs/comparison.spec.ts tests/specs/merge-text.spec.ts tests/specs/shadow-dom.spec.ts tests/specs/conflicts.spec.ts tests/specs/replace-child.spec.ts tests/specs/stop.spec.ts tests/specs/recorder.spec.ts tests/specs/save-into-repo.spec.ts
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

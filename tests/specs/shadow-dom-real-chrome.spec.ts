@@ -1,6 +1,10 @@
 import { writeFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
-import { launchWithAutoTranslate, disposeProfile } from '../fixtures/branded-browser'
+import {
+  launchWithAutoTranslate,
+  disposeProfile,
+  skipWithoutRealChrome,
+} from '../fixtures/branded-browser'
 import { bundleShield } from '../fixtures/bundle-shield'
 
 const TESTBED = 'http://localhost:5199/'
@@ -23,6 +27,8 @@ const readShadow = (page: Page): Promise<string> =>
 test.describe('shadow DOM under the real Chrome translator', () => {
   test.describe.configure({ mode: 'serial' })
   test.setTimeout(300_000)
+
+  test.beforeAll(() => skipWithoutRealChrome())
 
   const run = async (withShield: boolean) => {
     const { context, profileDir } = await launchWithAutoTranslate({

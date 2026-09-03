@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync, rmSync } from 'node:fs'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
-import { chromium, type BrowserContext } from '@playwright/test'
+import { chromium, test, type BrowserContext } from '@playwright/test'
 
 interface ProfileOptions {
   channel: 'chrome' | 'msedge'
@@ -58,4 +58,27 @@ export const launchWithAutoTranslate = async ({
 
 export const disposeProfile = (profileDir: string): void => {
   rmSync(profileDir, { recursive: true, force: true })
+}
+
+let headedChrome: boolean | null = null
+
+/**
+ * Skips a spec when a headed branded browser cannot start.
+ *
+ * These runs drive Chrome's own translate UI, which needs a real window: a CI
+ * runner ships the binary but no display, so the launch fails with "Missing X
+ * server". Probing for the binary is not enough, and neither is grepping spec
+ * names in the CI command, which is how a real-Chrome spec reached CI in the
+ * first place.
+ */
+export const skipWithoutRealChrome = async (
+  channel: 'chrome' | 'msedge' = 'chrome',
+): Promise<void> => {
+  if (headedChrome === null) {
+    headedChrome = await chromium
+      .launch({ channel, headless: false })
+      .then((browser) => browser.close().then(() => true))
+      .catch(() => false)
+  }
+  test.skip(!headedChrome, `needs a headed ${channel}, and this environment has no display`)
 }

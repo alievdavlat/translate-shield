@@ -1,6 +1,10 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
-import { launchWithAutoTranslate, disposeProfile } from '../fixtures/branded-browser'
+import {
+  launchWithAutoTranslate,
+  disposeProfile,
+  skipWithoutRealChrome,
+} from '../fixtures/branded-browser'
 import { bundleShield } from '../fixtures/bundle-shield'
 
 const RECORDER_URL = 'http://localhost:5200/'
@@ -118,6 +122,8 @@ const runArm = async (arm: Arm, target: string): Promise<ArmOutcome> => {
 test.describe('head to head in real Chrome with built-in translation', () => {
   test.describe.configure({ mode: 'serial' })
   test.setTimeout(400_000)
+
+  test.beforeAll(() => skipWithoutRealChrome())
 
   const outcomes: ArmOutcome[] = []
   const arms: Arm[] = ['no-protection', 'translation-resilience', 'translate-shield']
