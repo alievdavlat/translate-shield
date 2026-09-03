@@ -14,8 +14,6 @@ export type { RecoveredError, ShieldHandle, ShieldOptions, TranslationInfo, Tran
 export type { PatchedSurface } from './core/conflicts'
 export { mergeIntoTranslated } from './core/merge-text'
 
-const DEFAULT_WRAPPER_TAGS: ReadonlyArray<string> = []
-
 const inertHandle: ShieldHandle = {
   stop: () => undefined,
   isTranslated: () => false,
@@ -36,21 +34,18 @@ export const initTranslateShield = (options: ShieldOptions = {}): ShieldHandle =
 
   const {
     root = document.body || document.documentElement,
-    wrapperTags = DEFAULT_WRAPPER_TAGS,
+    wrapperTags = [],
     debug = false,
   } = options
   if (!root) return inertHandle
 
-  let translated = false
-  let engine: TranslatorEngine | null = null
+  let translation: TranslationInfo | null = null
 
   const conflicts = findConflicts()
   if (conflicts.length > 0) {
     options.onConflict?.(conflicts)
     console.warn(
-      '[translate-shield] another shim already replaced ' +
-        conflicts.join(', ') +
-        '. Both will run, but only one repair strategy can win and the other silently does nothing. Install one.',
+      `[translate-shield] another shim already replaced ${conflicts.join(', ')}. Both will run, but only one repair strategy can win and the other silently does nothing. Install one.`,
     )
   }
 
@@ -63,8 +58,7 @@ export const initTranslateShield = (options: ShieldOptions = {}): ShieldHandle =
   }
 
   const handleTranslationDetected = (info: TranslationInfo): void => {
-    translated = true
-    engine = info.engine
+    translation = info
     options.onTranslationDetected?.(info)
     if (!debug) return
     console.warn('[translate-shield] translation detected', info)
@@ -84,8 +78,8 @@ export const initTranslateShield = (options: ShieldOptions = {}): ShieldHandle =
       releaseInterceptors()
       activeHandle = null
     },
-    isTranslated: () => translated,
-    engine: () => engine,
+    isTranslated: () => translation !== null,
+    engine: () => translation?.engine ?? null,
     conflicts: () => conflicts,
   }
 

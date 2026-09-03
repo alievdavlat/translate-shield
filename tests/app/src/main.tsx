@@ -6,6 +6,7 @@ import { App } from './App'
 declare global {
   interface Window {
     __shieldEvents: string[]
+    __shieldHandle?: { stop: () => void }
   }
 }
 
@@ -19,7 +20,7 @@ const params = new URLSearchParams(window.location.search)
 if (params.has('guard')) installTranslateCrashGuard()
 
 if (params.has('shield')) {
-  initTranslateShield({
+  window.__shieldHandle = initTranslateShield({
     debug: true,
     onTranslationDetected: (info) => window.__shieldEvents.push(`detected:${info.lang}`),
     onRecoveredError: (error) =>

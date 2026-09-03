@@ -1,4 +1,4 @@
-import { detectEngine } from './dom'
+import { MARKER_ATTRIBUTES, detectEngine } from './dom'
 import type { TranslationInfo } from './types'
 
 /**
@@ -11,27 +11,23 @@ export const observeTranslation = (
 ): (() => void) => {
   if (typeof document === 'undefined') return () => undefined
 
-  let reported = false
-
-  const report = (): boolean => {
-    if (reported) return true
+  const detectAndReport = (): boolean => {
     const engine = detectEngine(document)
     if (!engine) return false
-    reported = true
     onDetected({ lang: document.documentElement.lang, engine, wrapperTag: '' })
     return true
   }
 
-  if (report()) return () => undefined
+  if (detectAndReport()) return () => undefined
 
   const observer = new MutationObserver(() => {
-    if (report()) observer.disconnect()
+    if (detectAndReport()) observer.disconnect()
   })
   observer.observe(document.documentElement, {
     childList: true,
     subtree: true,
     attributes: true,
-    attributeFilter: ['lang', '_msttexthash', 'data-moz-translations-id'],
+    attributeFilter: ['lang', ...MARKER_ATTRIBUTES],
   })
 
   return () => observer.disconnect()

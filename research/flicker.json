@@ -4,16 +4,16 @@
     "updates": [
       {
         "value": 5,
-        "sourceLanguageSamples": 2,
+        "sourceLanguageSamples": 3,
         "totalSamples": 25,
-        "sourceLanguageMs": 100,
+        "sourceLanguageMs": 150,
         "finalText": "Er zijn 5 lampen!"
       },
       {
         "value": 6,
-        "sourceLanguageSamples": 3,
+        "sourceLanguageSamples": 2,
         "totalSamples": 25,
-        "sourceLanguageMs": 150,
+        "sourceLanguageMs": 100,
         "finalText": "Er zijn 6 lampen!"
       },
       {

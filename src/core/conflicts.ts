@@ -3,7 +3,9 @@ export type PatchedSurface =
   | 'Node.prototype.insertBefore'
   | 'Node.prototype.replaceChild'
   | 'Node.prototype.nodeValue'
+  | 'Node.prototype.textContent'
   | 'CharacterData.prototype.data'
+  | 'Element.prototype.attachShadow'
 
 const NATIVE = /\[native code\]/
 
@@ -30,7 +32,9 @@ export const findConflicts = (): PatchedSurface[] => {
     ['Node.prototype.insertBefore', Node.prototype.insertBefore],
     ['Node.prototype.replaceChild', Node.prototype.replaceChild],
     ['Node.prototype.nodeValue', setterOf(Node.prototype, 'nodeValue')],
+    ['Node.prototype.textContent', setterOf(Node.prototype, 'textContent')],
     ['CharacterData.prototype.data', setterOf(CharacterData.prototype, 'data')],
+    ['Element.prototype.attachShadow', Element.prototype.attachShadow],
   ]
 
   return surfaces.filter(([, value]) => isPatched(value)).map(([name]) => name)

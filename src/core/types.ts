@@ -15,7 +15,7 @@ export interface RecoveredError {
 
 export interface ShieldOptions {
   root?: Element
-  wrapperTags?: string[]
+  wrapperTags?: ReadonlyArray<string>
   onTranslationDetected?: (info: TranslationInfo) => void
   onRecoveredError?: (error: RecoveredError) => void
   onConflict?: (surfaces: PatchedSurface[]) => void

@@ -1,4 +1,4 @@
-import { detectEngine, isText, isTranslatorWrapper } from './dom'
+import { engineOfWrapper, isElement, isText, isTranslatorWrapper } from './dom'
 import { isWrapper, linkNodes } from './registry'
 import type { TranslationInfo } from './types'
 
@@ -54,7 +54,7 @@ export const startObserver = ({
           pushInto(injectedWrappers, record.target, node as Element)
           return
         }
-        observeShadowRootsUnder(node)
+        if (isElement(node)) observeShadowRootsUnder(node)
       })
     })
 
@@ -71,11 +71,12 @@ export const startObserver = ({
 
     if (detected) return
     detected = true
-    const [firstParent] = Array.from(injectedWrappers.values())
+    const [firstBatch] = injectedWrappers.values()
+    const wrapper = firstBatch?.[0]
     onTranslationDetected({
       lang: document.documentElement.lang,
-      engine: detectEngine(document),
-      wrapperTag: firstParent?.[0]?.tagName ?? '',
+      engine: wrapper ? engineOfWrapper(wrapper) : null,
+      wrapperTag: wrapper?.tagName ?? '',
     })
   })
 
@@ -85,19 +86,13 @@ export const startObserver = ({
     observer.observe(node, OBSERVE_OPTIONS)
   }
 
-  function observeShadowRootsUnder(node: Node): void {
-    const scope = node as Element
-    if (typeof scope.querySelectorAll !== 'function') return
+  function observeShadowRootsUnder(scope: Element | ShadowRoot): void {
+    const hosts = isElement(scope) ? [scope, ...scope.querySelectorAll('*')] : scope.querySelectorAll('*')
 
-    if (scope.shadowRoot) {
-      observeRoot(scope.shadowRoot)
-      observeShadowRootsUnder(scope.shadowRoot as unknown as Node)
-    }
-
-    scope.querySelectorAll('*').forEach((element) => {
-      if (!element.shadowRoot) return
-      observeRoot(element.shadowRoot)
-      observeShadowRootsUnder(element.shadowRoot as unknown as Node)
+    hosts.forEach((host) => {
+      if (!host.shadowRoot) return
+      observeRoot(host.shadowRoot)
+      observeShadowRootsUnder(host.shadowRoot)
     })
   }
 

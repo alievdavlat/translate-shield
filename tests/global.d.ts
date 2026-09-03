@@ -6,6 +6,7 @@ declare global {
     __probes: Array<{ id: string }>
     __shieldInitError?: string
     __shieldEvents: string[]
+    __shieldHandle?: { stop: () => void }
     __competitorError?: string
     Experiments: {
       frameworkWrite: (

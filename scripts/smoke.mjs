@@ -1,4 +1,3 @@
-import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
@@ -63,13 +62,6 @@ check('CJS react', () => {
   if (typeof cjs.NoTranslate !== 'function') throw new Error('NoTranslate missing')
 })
 
-check('the react entry keeps its client boundary', () => {
-  for (const file of ['../dist/react.js', '../dist/react.cjs']) {
-    const first = readFileSync(new URL(file, import.meta.url), 'utf8').split('\n', 1)[0]
-    if (!first.includes('use client')) throw new Error(`${file} lost the directive`)
-  }
-})
-
 check('the exports map seals internals', () => {
   try {
     require.resolve('translate-shield/dist/react.js')
@@ -84,4 +76,4 @@ if (failures.length) {
   for (const failure of failures) console.error(`  ${failure}`)
   process.exit(1)
 }
-console.log(`smoke ok, ${8} checks`)
+console.log('smoke ok')

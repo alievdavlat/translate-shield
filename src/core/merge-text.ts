@@ -33,15 +33,27 @@ const asNumber = (value: string): number | null => {
  * of the sentence. Russian "4 lampochki" (few) and "7 lampochek" (many) take
  * different noun forms, so a digit swap there produces fluent-looking wrong text.
  */
-const keepsPluralCategory = (previous: string[], next: string[], locale: string): boolean => {
-  if (!locale) return false
+const ruleCache = new Map<string, Intl.PluralRules | null>()
 
-  let rules: Intl.PluralRules
+const pluralRulesFor = (locale: string): Intl.PluralRules | null => {
+  const cached = ruleCache.get(locale)
+  if (cached !== undefined) return cached
+
+  let rules: Intl.PluralRules | null = null
   try {
     rules = new Intl.PluralRules(locale)
   } catch {
-    return false
+    rules = null
   }
+  ruleCache.set(locale, rules)
+  return rules
+}
+
+const keepsPluralCategory = (previous: string[], next: string[], locale: string): boolean => {
+  if (!locale) return false
+
+  const rules = pluralRulesFor(locale)
+  if (!rules) return false
 
   return previous.every((value, index) => {
     const before = asNumber(value)
@@ -95,23 +107,16 @@ export const mergeIntoTranslated = (
 
   const previousNumbers = numbersOf(previousSource)
   const nextNumbers = numbersOf(nextSource)
-  if (previousNumbers.length === 0) return nextSource
   if (previousNumbers.length !== nextNumbers.length) return nextSource
+  if (!keepsPluralCategory(previousNumbers, nextNumbers, locale)) return nextSource
 
   const translatedNumbers = translated.match(TRANSLATED_NUMBER_PATTERN) ?? []
   if (translatedNumbers.length !== nextNumbers.length) return nextSource
-  if (!keepsPluralCategory(previousNumbers, nextNumbers, locale)) return nextSource
 
-  const replacements: string[] = []
-  for (let index = 0; index < translatedNumbers.length; index += 1) {
-    const translatedNumber = translatedNumbers[index]
-    const nextNumber = nextNumbers[index]
-    if (translatedNumber === undefined || nextNumber === undefined) return nextSource
-
-    const reskinned = reskinNumber(translatedNumber, digitsOf(nextNumber))
-    if (reskinned === null) return nextSource
-    replacements.push(reskinned)
-  }
+  const replacements = translatedNumbers.map((translatedNumber, index) =>
+    reskinNumber(translatedNumber, digitsOf(nextNumbers[index] ?? '')),
+  )
+  if (replacements.includes(null)) return nextSource
 
   let cursor = 0
   return translated.replace(TRANSLATED_NUMBER_PATTERN, (match) => {
