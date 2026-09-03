@@ -1,0 +1,5616 @@
+{
+  "schema": "translate-shield/engine-fingerprint/1",
+  "meta": {
+    "recordedAtIso": "2026-09-02T09:09:56.106Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 YaBrowser/26.8.0.0 Safari/537.36",
+    "brands": [
+      "Not;A=Brand 8",
+      "Chromium 150",
+      "YaBrowser 26.8",
+      "Yowser 2.5"
+    ],
+    "platform": "Windows",
+    "language": "ru",
+    "languages": [
+      "ru",
+      "en",
+      "de"
+    ],
+    "pageUrl": "http://localhost:5200/?autoarm=1&engine=yandex-builtin&target=nl&patience=20000",
+    "pageLangAttribute": "de",
+    "engineLabel": "yandex-builtin",
+    "targetLanguage": "nl"
+  },
+  "fingerprint": {
+    "langBefore": "en",
+    "langAfter": "de",
+    "langChanged": true,
+    "markersFound": [
+      "<ya-tr-span>"
+    ],
+    "firstForeignMutationAt": 32.2,
+    "probes": [
+      {
+        "id": "simple",
+        "label": "Plain sentence",
+        "question": "What wrapper does the engine inject, and is the original TextNode detached?",
+        "before": "There are 4 lights!",
+        "after": "Es gibt 4 Lichter!",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "10-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "There are 4 lights!",
+            "data-translation": "Es gibt 4 Lichter!",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ya-tr-span data-index=\"10-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"There are 4 lights!\" data-translation=\"Es gibt 4 Lichter!\" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">Es gibt 4 Lichter!</ya-tr-span>"
+      },
+      {
+        "id": "interpolated",
+        "label": "Value between two text runs",
+        "question": "Does the engine give the number its own segment, or merge the sentence?",
+        "before": "Total: 19.99 EUR per order",
+        "after": "Gesamt: 19.99 EUR pro Bestellung",
+        "changed": true,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 3,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "11-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "Total: ",
+            "data-translation": "Gesamt: ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ya-tr-span data-index=\"11-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"Total: \" data-translation=\"Gesamt: \" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">Gesamt: </ya-tr-span><ya-tr-span data-index=\"11-1\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"19.99\" data-translation=\"19.99\" data-ch=\"0\" data-type…"
+      },
+      {
+        "id": "number-only",
+        "label": "Bare number",
+        "question": "Does a pure number get wrapped at all?",
+        "before": "42",
+        "after": "42",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "42"
+      },
+      {
+        "id": "conditional",
+        "label": "Conditional text with a sibling",
+        "question": "The removeChild crash shape. Is the text node detached while the sibling stays?",
+        "before": "There are 4 lights! (status)",
+        "after": "Es gibt 4 Lichter! (status)",
+        "changed": true,
+        "originalTextNodes": 2,
+        "detachedTextNodes": 2,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "12-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "There are 4 lights!",
+            "data-translation": "Es gibt 4 Lichter!",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ya-tr-span data-index=\"12-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"There are 4 lights!\" data-translation=\"Es gibt 4 Lichter!\" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">Es gibt 4 Lichter!</ya-tr-span><span><ya-tr-span data-index=\"2-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\" \" data-translat…"
+      },
+      {
+        "id": "inline-nested",
+        "label": "Nested inline elements",
+        "question": "Does the engine reorder inline elements for target-language word order?",
+        "before": "The quick brown fox jumps over the lazy dog",
+        "after": "Die quick Braun fox jumps over the lazy dog",
+        "changed": true,
+        "originalTextNodes": 5,
+        "detachedTextNodes": 5,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "13-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "The ",
+            "data-translation": "Die ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ya-tr-span data-index=\"13-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"The \" data-translation=\"Die \" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">Die </ya-tr-span><b><ya-tr-span data-index=\"13-1\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"quick\" data-translation=\"quick\" data-ch=\"0\" data-type=\"trSpan…"
+      },
+      {
+        "id": "list",
+        "label": "List items",
+        "question": "Are list items translated independently or merged into one segment?",
+        "before": "First lightSecond lightThird light",
+        "after": "First lightDas zweite LichtDritte Licht",
+        "changed": true,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 3,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "14-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "First light",
+            "data-translation": "First light",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ul><li><ya-tr-span data-index=\"14-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"First light\" data-translation=\"First light\" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">First light</ya-tr-span></li><li><ya-tr-span data-index=\"15-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"Second light\" data-transla…"
+      },
+      {
+        "id": "attributes",
+        "label": "Attributes (title, alt, placeholder)",
+        "question": "Does the engine translate attributes, and does that mutate the DOM?",
+        "before": "hover me",
+        "after": "hover me",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "17-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "hover me",
+            "data-translation": "hover me",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<span title=\"Es sind 4 Lichter in den Raum\"><ya-tr-span data-index=\"17-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"hover me\" data-translation=\"hover me\" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">hover me</ya-tr-span></span><img alt=\"Es sind 4 Lichter,\" width=\"1\" height=\"1\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEA…"
+      },
+      {
+        "id": "translate-no",
+        "label": "translate=\"no\"",
+        "question": "Is the documented opt-out actually honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "notranslate-class",
+        "label": "class=\"notranslate\"",
+        "question": "Is the legacy Google opt-out honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "Es gibt 4 Lichter! Insgesamt: 19.99 EUR",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "18-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "There are 4 lights! ",
+            "data-translation": "Es gibt 4 Lichter! ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "inlineVerticalAlign": "",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ya-tr-span data-index=\"18-0\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"There are 4 lights! \" data-translation=\"Es gibt 4 Lichter! \" data-ch=\"0\" data-type=\"trSpan\" style=\"visibility: inherit !important;\">Es gibt 4 Lichter! </ya-tr-span><ya-tr-span data-index=\"18-1\" data-translated=\"true\" data-source-lang=\"en\" data-target-lang=\"de\" data-value=\"Total: 19.99 EUR\" …"
+      },
+      {
+        "id": "input-value",
+        "label": "Input value",
+        "question": "Does the engine rewrite form values the app reads back?",
+        "before": "There are 4 lights",
+        "after": "There are 4 lights",
+        "changed": false,
+        "originalTextNodes": 0,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<input type=\"text\" aria-label=\"value probe\">"
+      },
+      {
+        "id": "shadow",
+        "label": "Shadow DOM",
+        "question": "Does the engine reach into a shadow root? Nobody has documented this.",
+        "before": "There are 4 lights inside a shadow root!",
+        "after": "Es sind 4 Lichter, die innerhalb eines shadow root!",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<div></div>"
+      },
+      {
+        "id": "plural-one",
+        "label": "Singular agreement",
+        "question": "Grammar risk: what does the target language do at 1?",
+        "before": "There is 1 light in the room.",
+        "after": "There is 1 light in the room.",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There is 1 light in the room."
+      },
+      {
+        "id": "plural-many",
+        "label": "Plural agreement",
+        "question": "Compare with the singular probe. If they differ, digit swapping is unsafe.",
+        "before": "There are 5 lights in the room.",
+        "after": "There are 5 lights in the room.",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 5 lights in the room."
+      },
+      {
+        "id": "digits",
+        "label": "Digit systems and separators",
+        "question": "Does the engine reshape digits or number separators for the target locale?",
+        "before": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+        "after": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+      },
+      {
+        "id": "burst-target",
+        "label": "Sustained updates target",
+        "question": "Under many writes per second, does the engine loop or fall behind?",
+        "before": "There are 4 lights!",
+        "after": "There are 4 lights!",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights!"
+      },
+      {
+        "id": "dynamic",
+        "label": "Content added after translation",
+        "question": "Does the engine re-translate late content, and how fast?",
+        "before": "waiting for the experiment",
+        "after": "waiting for the experiment",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "waiting for the experiment"
+      }
+    ]
+  },
+  "experiments": {},
+  "mutations": [
+    {
+      "t": 32.2,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-arm",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 32.2,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-capture",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 32.2,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Press Arm before translating anything."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ]
+    },
+    {
+      "t": 32.2,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-armed"
+    },
+    {
+      "t": 205.8,
+      "type": "childList",
+      "target": "html > body",
+      "targetTag": "BODY",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "id": "tr-popup",
+            "class": "tr-popup",
+            "translate": "no",
+            "data-hidden": "true",
+            "data-invalid": "true",
+            "data-disabled": "true",
+            "lang": "ru"
+          },
+          "text": "Оригинальный текст: Предложить переводОтправитьСпасибо, перевод отправленОтключи…"
+        }
+      ]
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Es gibt 4 Lichter!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Insgesamt: ",
+      "previous": "Total: "
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "19.99",
+      "previous": "19.99"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " EUR pro Bestellung",
+      "previous": " EUR per order"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Es gibt 4 Lichter! ",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " (status)",
+      "previous": " (status)"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Die ",
+      "previous": "The "
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "schnelle",
+      "previous": "quick"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " brown ",
+      "previous": " brown "
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "fox",
+      "previous": "fox"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " jumps over the lazy dog",
+      "previous": " jumps over the lazy dog"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "First light",
+      "previous": "First light"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Das zweite Licht",
+      "previous": "Second light"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Dritte Licht",
+      "previous": "Third light"
+    },
+    {
+      "t": 418.8,
+      "type": "attributes",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "title",
+      "value": "Es sind 4 Lichter in den Raum"
+    },
+    {
+      "t": 418.8,
+      "type": "attributes",
+      "target": "[attributes] > img",
+      "targetTag": "IMG",
+      "sinceSelfOpMs": null,
+      "attribute": "alt",
+      "value": "Es sind 4 Lichter,"
+    },
+    {
+      "t": 418.8,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "Platzhalter Sonde"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "hover me",
+      "previous": "hover me"
+    },
+    {
+      "t": 418.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Es gibt 4 Lichter! Insgesamt: 19.99 EUR",
+      "previous": "There are 4 lights! Total: 19.99 EUR"
+    },
+    {
+      "t": 418.8,
+      "type": "childList",
+      "target": "[simple]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ]
+    },
+    {
+      "t": 418.9,
+      "type": "childList",
+      "target": "[simple]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "0-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "There are 4 lights!",
+            "data-translation": "Es gibt 4 Lichter!",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Es gibt 4 Lichter!"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Insgesamt: "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Insgesamt: "
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " EUR pro Bestellung"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " EUR pro Bestellung"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Insgesamt: "
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "1-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "Total: ",
+            "data-translation": "Insgesamt: ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Insgesamt: "
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "1-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "19.99",
+            "data-translation": "19.99",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "19.99"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " EUR pro Bestellung"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "1-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": " EUR per order",
+            "data-translation": " EUR pro Bestellung",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": " EUR pro Bestellung"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " (status)"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " "
+        },
+        {
+          "kind": "text",
+          "value": "(status)"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "2-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "There are 4 lights!",
+            "data-translation": "Es gibt 4 Lichter! ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Es gibt 4 Lichter! "
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " "
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "2-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": " ",
+            "data-translation": " ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": " "
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "(status)"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "2-1",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "(status)",
+            "data-translation": "(status)",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "(status)"
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Die "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Die "
+        }
+      ]
+    },
+    {
+      "t": 419,
+      "type": "childList",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "schnelle"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "schnelle"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " brown "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " brown "
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "fox"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "fox"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " jumps over the lazy dog"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " jumps over the lazy dog"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Die "
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "3-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "The ",
+            "data-translation": "Die ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Die "
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "schnelle"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "3-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "quick",
+            "data-translation": "schnelle",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "schnelle"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " brown "
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "3-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": " brown ",
+            "data-translation": " brown ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": " brown "
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "fox"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "3-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "fox",
+            "data-translation": "fox",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "fox"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " jumps over the lazy dog"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "3-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": " jumps over the lazy dog",
+            "data-translation": " jumps over the lazy dog",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": " jumps over the lazy dog"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "First light"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "First light"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "First light"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "4-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "First light",
+            "data-translation": "First light",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "First light"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Das zweite Licht"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Das zweite Licht"
+        }
+      ]
+    },
+    {
+      "t": 419.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Das zweite Licht"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "5-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "Second light",
+            "data-translation": "Das zweite Licht",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Das zweite Licht"
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Dritte Licht"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Dritte Licht"
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Dritte Licht"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "6-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "Third light",
+            "data-translation": "Dritte Licht",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Dritte Licht"
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "hover me"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "hover me"
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "hover me"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "7-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "hover me",
+            "data-translation": "hover me",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "hover me"
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[notranslate-class]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! Insgesamt: 19.99 EUR"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        },
+        {
+          "kind": "text",
+          "value": "Insgesamt: 19.99 EUR"
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[notranslate-class]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "8-0",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "There are 4 lights! ",
+            "data-translation": "Es gibt 4 Lichter! ",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Es gibt 4 Lichter! "
+        }
+      ]
+    },
+    {
+      "t": 419.2,
+      "type": "childList",
+      "target": "[notranslate-class]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Insgesamt: 19.99 EUR"
+        }
+      ],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "YA-TR-SPAN",
+          "attributes": {
+            "data-index": "8-1",
+            "data-translated": "true",
+            "data-source-lang": "en",
+            "data-target-lang": "de",
+            "data-value": "Total: 19.99 EUR",
+            "data-translation": "Insgesamt: 19.99 EUR",
+            "data-ch": "0",
+            "data-type": "trSpan",
+            "style": "visibility: inherit !important;"
+          },
+          "text": "Insgesamt: 19.99 EUR"
+        }
+      ]
+    },
+    {
+      "t": 419.3,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "false"
+    },
+    {
+      "t": 419.3,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "placeholder",
+      "value": "Es sind 4 Lichter,"
+    },
+    {
+      "t": 422.5,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "true"
+    },
+    {
+      "t": 422.7,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "false"
+    },
+    {
+      "t": 537.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "0 mutations recorded"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "62 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 1032.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "62 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "63 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 1541.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "63 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "64 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 2041.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "64 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "65 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 2540.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "65 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "66 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 3039.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "66 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "67 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 3537.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "67 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "68 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 4035.7,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "68 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "69 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 4533.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "69 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "70 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 5046.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "70 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "71 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 5544.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "71 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "72 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 6039.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "72 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "73 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 6535.7,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "73 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "74 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "true"
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "Es gibt 4 Lichter!"
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Total: ",
+      "previous": "Insgesamt: "
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "19.99",
+      "previous": "19.99"
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " EUR per order",
+      "previous": " EUR pro Bestellung"
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "Es gibt 4 Lichter! "
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "(status)",
+      "previous": "(status)"
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "The ",
+      "previous": "Die "
+    },
+    {
+      "t": 6690.8,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "quick",
+      "previous": "schnelle"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " brown ",
+      "previous": " brown "
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "fox",
+      "previous": "fox"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " jumps over the lazy dog",
+      "previous": " jumps over the lazy dog"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "First light",
+      "previous": "First light"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Second light",
+      "previous": "Das zweite Licht"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Third light",
+      "previous": "Dritte Licht"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "title",
+      "value": "There are 4 lights in the room"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[attributes] > img",
+      "targetTag": "IMG",
+      "sinceSelfOpMs": null,
+      "attribute": "alt",
+      "value": "There are 4 lights"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "placeholder",
+      "value": "There are 4 lights"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "placeholder probe"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "hover me",
+      "previous": "hover me"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights! ",
+      "previous": "Es gibt 4 Lichter! "
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Total: 19.99 EUR",
+      "previous": "Insgesamt: 19.99 EUR"
+    },
+    {
+      "t": 6690.9,
+      "type": "attributes",
+      "target": "[input-value] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "value probe"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There is 1 light in the room.",
+      "previous": "There is 1 light in the room."
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 5 lights in the room.",
+      "previous": "There are 5 lights in the room."
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+      "previous": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 6690.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "waiting for the experiment",
+      "previous": "waiting for the experiment"
+    },
+    {
+      "t": 7046,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "74 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "120 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 7540.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "120 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "121 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 8038.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "121 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "122 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 8419.7,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "true"
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Total: ",
+      "previous": "Total: "
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "19.99",
+      "previous": "19.99"
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " EUR per order",
+      "previous": " EUR per order"
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "(status)",
+      "previous": "(status)"
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "The ",
+      "previous": "The "
+    },
+    {
+      "t": 8419.8,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "quick",
+      "previous": "quick"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " brown ",
+      "previous": " brown "
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "fox",
+      "previous": "fox"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " jumps over the lazy dog",
+      "previous": " jumps over the lazy dog"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "First light",
+      "previous": "First light"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Second light",
+      "previous": "Second light"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Third light",
+      "previous": "Third light"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "title",
+      "value": "There are 4 lights in the room"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[attributes] > img",
+      "targetTag": "IMG",
+      "sinceSelfOpMs": null,
+      "attribute": "alt",
+      "value": "There are 4 lights"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "placeholder",
+      "value": "There are 4 lights"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "placeholder probe"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "hover me",
+      "previous": "hover me"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights! ",
+      "previous": "There are 4 lights! "
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Total: 19.99 EUR",
+      "previous": "Total: 19.99 EUR"
+    },
+    {
+      "t": 8419.9,
+      "type": "attributes",
+      "target": "[input-value] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "value probe"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There is 1 light in the room.",
+      "previous": "There is 1 light in the room."
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 5 lights in the room.",
+      "previous": "There are 5 lights in the room."
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+      "previous": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8419.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "waiting for the experiment",
+      "previous": "waiting for the experiment"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "true"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Total: ",
+      "previous": "Total: "
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "19.99",
+      "previous": "19.99"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " EUR per order",
+      "previous": " EUR per order"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "(status)",
+      "previous": "(status)"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "The ",
+      "previous": "The "
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "quick",
+      "previous": "quick"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " brown ",
+      "previous": " brown "
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "fox",
+      "previous": "fox"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " jumps over the lazy dog",
+      "previous": " jumps over the lazy dog"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "First light",
+      "previous": "First light"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Second light",
+      "previous": "Second light"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Third light",
+      "previous": "Third light"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "title",
+      "value": "There are 4 lights in the room"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[attributes] > img",
+      "targetTag": "IMG",
+      "sinceSelfOpMs": null,
+      "attribute": "alt",
+      "value": "There are 4 lights"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "placeholder",
+      "value": "There are 4 lights"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "placeholder probe"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "hover me",
+      "previous": "hover me"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights! ",
+      "previous": "There are 4 lights! "
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "false"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Total: 19.99 EUR",
+      "previous": "Total: 19.99 EUR"
+    },
+    {
+      "t": 8421.8,
+      "type": "attributes",
+      "target": "[input-value] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "value probe"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There is 1 light in the room.",
+      "previous": "There is 1 light in the room."
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 5 lights in the room.",
+      "previous": "There are 5 lights in the room."
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+      "previous": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+    },
+    {
+      "t": 8421.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "There are 4 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8421.9,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "waiting for the experiment",
+      "previous": "waiting for the experiment"
+    },
+    {
+      "t": 8537.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "122 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "213 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Es gibt 4 Lichter!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Gesamt: ",
+      "previous": "Total: "
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "19.99",
+      "previous": "19.99"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " EUR pro Bestellung",
+      "previous": " EUR per order"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Es gibt 4 Lichter!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "(status)",
+      "previous": "(status)"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Die ",
+      "previous": "The "
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "quick",
+      "previous": "quick"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " Braun ",
+      "previous": " brown "
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "fox",
+      "previous": "fox"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": " jumps over the lazy dog",
+      "previous": " jumps over the lazy dog"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "First light",
+      "previous": "First light"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Das zweite Licht",
+      "previous": "Second light"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Dritte Licht",
+      "previous": "Third light"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "title",
+      "value": "Es sind 4 Lichter in den Raum"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[attributes] > img",
+      "targetTag": "IMG",
+      "sinceSelfOpMs": null,
+      "attribute": "alt",
+      "value": "Es sind 4 Lichter,"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "aria-label",
+      "value": "Platzhalter Sonde"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "hover me",
+      "previous": "hover me"
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Es gibt 4 Lichter! ",
+      "previous": "There are 4 lights! "
+    },
+    {
+      "t": 8652,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": null,
+      "value": "Insgesamt: 19.99 EUR",
+      "previous": "Total: 19.99 EUR"
+    },
+    {
+      "t": 8652,
+      "type": "childList",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ]
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "10-0"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "There are 4 lights!"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Es gibt 4 Lichter!"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[simple] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652,
+      "type": "childList",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Gesamt: "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Gesamt: "
+        }
+      ]
+    },
+    {
+      "t": 8652,
+      "type": "childList",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ]
+    },
+    {
+      "t": 8652,
+      "type": "childList",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " EUR pro Bestellung"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " "
+        },
+        {
+          "kind": "text",
+          "value": "EUR pro Bestellung"
+        }
+      ]
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "11-0"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "Total: "
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Gesamt: "
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "11-1"
+    },
+    {
+      "t": 8652,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "19.99"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "19.99"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "11-2"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "EUR per order"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "EUR pro Bestellung"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "11-2"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "EUR per order"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "EUR pro Bestellung"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[interpolated] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.1,
+      "type": "childList",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter!"
+        }
+      ]
+    },
+    {
+      "t": 8652.1,
+      "type": "childList",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "(status)"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "(status)"
+        }
+      ]
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "12-0"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "There are 4 lights!"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Es gibt 4 Lichter!"
+    },
+    {
+      "t": 8652.1,
+      "type": "attributes",
+      "target": "[conditional] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "12-1"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "(status)"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "(status)"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[conditional] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "childList",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Die "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Die "
+        }
+      ]
+    },
+    {
+      "t": 8652.2,
+      "type": "childList",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "quick"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "quick"
+        }
+      ]
+    },
+    {
+      "t": 8652.2,
+      "type": "childList",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " Braun "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " "
+        },
+        {
+          "kind": "text",
+          "value": "Braun "
+        }
+      ]
+    },
+    {
+      "t": 8652.2,
+      "type": "childList",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "fox"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "fox"
+        }
+      ]
+    },
+    {
+      "t": 8652.2,
+      "type": "childList",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " jumps over the lazy dog"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": " "
+        },
+        {
+          "kind": "text",
+          "value": "jumps over the lazy dog"
+        }
+      ]
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "The "
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Die "
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-1"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "quick"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "quick"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > b > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-2"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "brown "
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Braun "
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-2"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "brown "
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Braun "
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-3"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "fox"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "fox"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > i > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-4"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "jumps over the lazy dog"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "jumps over the lazy dog"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "13-4"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.2,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "jumps over the lazy dog"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "jumps over the lazy dog"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[inline-nested] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.3,
+      "type": "childList",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "First light"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "First light"
+        }
+      ]
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "14-0"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "First light"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "First light"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.3,
+      "type": "childList",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Das zweite Licht"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Das zweite Licht"
+        }
+      ]
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "15-0"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "Second light"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Das zweite Licht"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.3,
+      "type": "childList",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Dritte Licht"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Dritte Licht"
+        }
+      ]
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "16-0"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "Third light"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Dritte Licht"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[list] > ul > li > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.3,
+      "type": "childList",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "hover me"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "hover me"
+        }
+      ]
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "17-0"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "hover me"
+    },
+    {
+      "t": 8652.3,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "hover me"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[attributes] > span > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.4,
+      "type": "childList",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Es gibt 4 Lichter! "
+        }
+      ]
+    },
+    {
+      "t": 8652.4,
+      "type": "childList",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Insgesamt: 19.99 EUR"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Insgesamt: 19.99 EUR"
+        }
+      ]
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "18-0"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "There are 4 lights! "
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Es gibt 4 Lichter! "
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-index",
+      "value": "18-1"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translated",
+      "value": "true"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-source-lang",
+      "value": "en"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-target-lang",
+      "value": "de"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-value",
+      "value": "Total: 19.99 EUR"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-translation",
+      "value": "Insgesamt: 19.99 EUR"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[notranslate-class] > ya-tr-span",
+      "targetTag": "YA-TR-SPAN",
+      "sinceSelfOpMs": null,
+      "attribute": "data-ch",
+      "value": "0"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "false"
+    },
+    {
+      "t": 8652.4,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": null,
+      "attribute": "placeholder",
+      "value": "Es sind 4 Lichter,"
+    },
+    {
+      "t": 8653.6,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "true"
+    },
+    {
+      "t": 8653.7,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "false"
+    },
+    {
+      "t": 9048,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "213 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "395 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 9546.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "395 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "396 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 10045.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "396 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "397 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 10541.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "397 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "398 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 11033.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "398 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "399 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 11532.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "399 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "400 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 12046.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "400 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "401 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 12533.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "401 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "402 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 13035.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "402 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "403 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 13544.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "403 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "404 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 14045.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "404 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "405 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 14541.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "405 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "406 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 15037.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "406 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "407 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 15535.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "407 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "408 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 16035.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "408 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "409 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 16546.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "409 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "410 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 17032.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "410 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "411 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 17533.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "411 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "412 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 18033,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "412 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "413 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 18538.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "413 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "414 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 18989.1,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 18989.1,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-save",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 18989.1,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-export",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 18989.1,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-copy",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 18989.1,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "fingerprint{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"de\",\n  \"langChanged\": true,\n …"
+        }
+      ]
+    },
+    {
+      "t": 18989.2,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 17 original text nodes were detached. Run the experiments."
+        }
+      ]
+    },
+    {
+      "t": 18989.3,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-bad"
+    },
+    {
+      "t": 19038.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "414 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "422 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 19247.3,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "true"
+    },
+    {
+      "t": 19247.4,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"de\",\n  \"langChanged\": true,\n  \"markersFo…"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"de\",\n  \"langChanged\": true,\n  \"markersFo…"
+        },
+        {
+          "kind": "text",
+          "value": "      \"html\": \"<ya-tr-span data-index=\\\"10-0\\\" data-translated=\\\"true\\\" data-sou…"
+        },
+        {
+          "kind": "text",
+          "value": "        \"computedVerticalAlign\": \"baseline\"\n      },\n      \"html\": \"<ya-tr-span …"
+        },
+        {
+          "kind": "text",
+          "value": "      \"originalTextNodes\": 2,\n      \"detachedTextNodes\": 2,\n      \"textNodesStil…"
+        },
+        {
+          "kind": "text",
+          "value": "      \"question\": \"Does the engine reorder inline elements for target-language w…"
+        },
+        {
+          "kind": "text",
+          "value": "      \"html\": \"<ya-tr-span data-index=\\\"13-0\\\" data-translated=\\\"true\\\" data-sou…"
+        },
+        {
+          "kind": "text",
+          "value": "          \"data-type\": \"trSpan\",\n          \"style\": \"visibility: inherit !import…"
+        },
+        {
+          "kind": "text",
+          "value": "          \"data-source-lang\": \"en\",\n          \"data-target-lang\": \"de\",\n        …"
+        },
+        {
+          "kind": "text",
+          "value": "      \"textNodesMutatedInPlace\": 0,\n      \"wrapper\": null,\n      \"html\": \"There …"
+        },
+        {
+          "kind": "text",
+          "value": "      \"html\": \"<ya-tr-span data-index=\\\"18-0\\\" data-translated=\\\"true\\\" data-sou…"
+        },
+        {
+          "kind": "text",
+          "value": "      \"changed\": true,\n      \"originalTextNodes\": 1,\n      \"detachedTextNodes\": …"
+        },
+        {
+          "kind": "text",
+          "value": "      \"id\": \"digits\",\n      \"label\": \"Digit systems and separators\",\n      \"ques…"
+        },
+        {
+          "kind": "text",
+          "value": "      \"before\": \"waiting for the experiment\",\n      \"after\": \"waiting for the ex…"
+        }
+      ]
+    },
+    {
+      "t": 19252.1,
+      "type": "attributes",
+      "target": "html > body > div#tr-popup",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "attribute": "data-disabled",
+      "value": "false"
+    },
+    {
+      "t": 19536.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "422 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "426 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 19978.1,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 0,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 19978.1,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 17 original text nodes were detached. Run the experiments."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 19978.1,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 20033.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 55.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "426 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "430 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 20545.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 567.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "430 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "431 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 21044.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1066.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "431 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "432 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 21474,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1495.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Could not save into the repo (Failed to execute 'json' on 'Response': Unexpected…"
+        }
+      ]
+    },
+    {
+      "t": 21474,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1495.9,
+      "attribute": "class",
+      "value": "status status-warn"
+    },
+    {
+      "t": 21540.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1562.3,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "432 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "435 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 22033.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2055.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "435 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "436 mutations recorded — foreign activity detected"
+        }
+      ]
+    }
+  ],
+  "notes": "",
+  "mutationsDropped": 0,
+  "selfOps": [
+    {
+      "at": 19978.1,
+      "description": "frameworkWrite simple"
+    }
+  ]
+}

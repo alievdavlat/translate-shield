@@ -1,0 +1,32 @@
+[
+  {
+    "protection": "none",
+    "counterAfterIncrement": "Er zijn 4 lampen!",
+    "totalAfterRaise": "Totaal: 19.99 EUR",
+    "appAliveAfterHide": false,
+    "conditionalAfterHide": "<gone: app crashed>",
+    "ternaryAfterToggle": "<gone: app crashed>",
+    "domErrors": [
+      "error:Uncaught NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.",
+      "error:Uncaught NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node."
+    ]
+  },
+  {
+    "protection": "community-guard",
+    "counterAfterIncrement": "Er zijn 4 lampen!",
+    "totalAfterRaise": "Totaal: 19.99 EUR",
+    "appAliveAfterHide": true,
+    "conditionalAfterHide": "Er zijn 4 lampen! (status)",
+    "ternaryAfterToggle": "AlternatiefText 5 and more einde.",
+    "domErrors": []
+  },
+  {
+    "protection": "shield",
+    "counterAfterIncrement": "Er zijn 5 lampen!",
+    "totalAfterRaise": "Totaal: 29.99 EUR",
+    "appAliveAfterHide": true,
+    "conditionalAfterHide": "(status)",
+    "ternaryAfterToggle": "Text 5 and more einde.",
+    "domErrors": []
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "strategy": "restore and retranslate",
+    "updates": [
+      {
+        "value": 5,
+        "sourceLanguageSamples": 3,
+        "totalSamples": 25,
+        "sourceLanguageMs": 150,
+        "finalText": "Er zijn 5 lampen!"
+      },
+      {
+        "value": 6,
+        "sourceLanguageSamples": 4,
+        "totalSamples": 25,
+        "sourceLanguageMs": 200,
+        "finalText": "Er zijn 6 lampen!"
+      },
+      {
+        "value": 7,
+        "sourceLanguageSamples": 4,
+        "totalSamples": 25,
+        "sourceLanguageMs": 200,
+        "finalText": "Er zijn 7 lampen!"
+      },
+      {
+        "value": 8,
+        "sourceLanguageSamples": 3,
+        "totalSamples": 25,
+        "sourceLanguageMs": 150,
+        "finalText": "Er zijn 8 lampen!"
+      }
+    ],
+    "totalSourceLanguageMs": 700,
+    "worstUpdateMs": 200
+  },
+  {
+    "strategy": "mirror into the wrapper",
+    "updates": [
+      {
+        "value": 5,
+        "sourceLanguageSamples": 0,
+        "totalSamples": 25,
+        "sourceLanguageMs": 0,
+        "finalText": "Er zijn 5 lampen!"
+      },
+      {
+        "value": 6,
+        "sourceLanguageSamples": 0,
+        "totalSamples": 25,
+        "sourceLanguageMs": 0,
+        "finalText": "Er zijn 6 lampen!"
+      },
+      {
+        "value": 7,
+        "sourceLanguageSamples": 0,
+        "totalSamples": 25,
+        "sourceLanguageMs": 0,
+        "finalText": "Er zijn 7 lampen!"
+      },
+      {
+        "value": 8,
+        "sourceLanguageSamples": 0,
+        "totalSamples": 25,
+        "sourceLanguageMs": 0,
+        "finalText": "Er zijn 8 lampen!"
+      }
+    ],
+    "totalSourceLanguageMs": 0,
+    "worstUpdateMs": 0
+  }
+]

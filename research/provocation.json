@@ -1,0 +1,101 @@
+[
+  {
+    "provocation": "none (control)",
+    "kind": "none",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "forced layout read",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "synthetic visibilitychange",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "synthetic window focus",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "synthetic resize",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "synthetic mousemove",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "scrollIntoView on the node",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": 158,
+    "textAfter": "Er zijn 9 lichten die nog vertaald moeten worden.",
+    "valid": true
+  },
+  {
+    "provocation": "scrollBy 1px and back",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "scrollTo bottom and back",
+    "kind": "in-page",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "trusted mouse wheel",
+    "kind": "trusted-input",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  },
+  {
+    "provocation": "trusted mouse move",
+    "kind": "trusted-input",
+    "reachedIdle": true,
+    "baselineHeld": true,
+    "reactedAfterMs": null,
+    "textAfter": "There are 9 lights waiting to be translated",
+    "valid": true
+  }
+]

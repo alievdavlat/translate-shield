@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translator fingerprint recorder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-backdrop" aria-hidden="true"></div>
+
+    <header class="masthead" translate="no">
+      <p class="eyebrow">translate-shield / phase A</p>
+      <h1>Translator fingerprint recorder</h1>
+      <p class="lede">
+        This page records exactly what your browser's translator does to a live DOM. Arm it,
+        translate the page, capture, run the experiments, export the JSON.
+      </p>
+    </header>
+
+    <section class="panel notranslate" translate="no" aria-label="Controls">
+      <ol class="steps">
+        <li>Fill in the engine and target language below.</li>
+        <li>Press <em>Arm</em> — do this <u>before</u> translating.</li>
+        <li>Turn on your browser's translation (right click &rarr; Translate).</li>
+        <li>Press <em>Capture fingerprint</em>.</li>
+        <li>Press <em>Run experiments</em> and wait (~20 seconds).</li>
+        <li>Press <em>Export JSON</em> and send the file back.</li>
+      </ol>
+
+      <div class="fields">
+        <label>
+          Engine
+          <input id="engine-label" type="text" placeholder="chrome-builtin / edge / firefox / yandex / safari / gt-extension" />
+        </label>
+        <label>
+          Target language
+          <input id="target-language" type="text" placeholder="nl, de, ru, ar…" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="btn-arm" type="button" class="primary">Arm</button>
+        <button id="btn-capture" type="button" disabled>Capture fingerprint</button>
+        <button id="btn-experiments" type="button" disabled>Run experiments</button>
+        <button id="btn-save" type="button" disabled>Save into repo</button>
+        <button id="btn-export" type="button" disabled>Download JSON</button>
+        <button id="btn-copy" type="button" disabled>Copy JSON</button>
+      </div>
+
+      <p id="status" class="status status-idle">Press Arm before translating anything.</p>
+      <p id="counter" class="counter">0 mutations recorded</p>
+
+      <label class="notes-label">
+        Notes (anything odd you noticed)
+        <textarea id="notes" rows="2" placeholder="e.g. the page flickered twice"></textarea>
+      </label>
+
+      <textarea id="json-output" rows="10" hidden aria-label="JSON output"></textarea>
+    </section>
+
+    <main>
+      <h2 class="section-title" translate="no">Probes</h2>
+      <div id="probes" class="probes"></div>
+
+      <h2 class="section-title" translate="no">Results</h2>
+      <div id="results" class="results"></div>
+    </main>
+
+    <script src="js/probes.js"></script>
+    <script src="js/recorder.js"></script>
+    <script src="js/experiments.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

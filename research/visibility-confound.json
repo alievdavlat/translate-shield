@@ -1,0 +1,42 @@
+[
+  {
+    "operation": "restore the original node",
+    "placement": "in view",
+    "reachedIdle": false,
+    "wasVisible": true,
+    "textAfterOperation": "There are 4 lights!",
+    "reactedAfterMs": 211,
+    "textAfterWaiting": "Er zijn 4 lampen!",
+    "engineRepairedIt": true
+  },
+  {
+    "operation": "restore the original node",
+    "placement": "off screen",
+    "reachedIdle": false,
+    "wasVisible": false,
+    "textAfterOperation": "There are 4 lights!",
+    "reactedAfterMs": null,
+    "textAfterWaiting": "There are 4 lights!",
+    "engineRepairedIt": false
+  },
+  {
+    "operation": "write into the wrapper",
+    "placement": "in view",
+    "reachedIdle": false,
+    "wasVisible": true,
+    "textAfterOperation": "Er zijn 7 lampen!",
+    "reactedAfterMs": null,
+    "textAfterWaiting": "Er zijn 7 lampen!",
+    "engineRepairedIt": false
+  },
+  {
+    "operation": "write into the wrapper",
+    "placement": "off screen",
+    "reachedIdle": false,
+    "wasVisible": false,
+    "textAfterOperation": "Er zijn 7 lampen!",
+    "reactedAfterMs": null,
+    "textAfterWaiting": "Er zijn 7 lampen!",
+    "engineRepairedIt": false
+  }
+]

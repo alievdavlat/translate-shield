@@ -1,0 +1,100 @@
+[
+  {
+    "arm": "no-protection",
+    "target": "nl",
+    "protectionInstalled": false,
+    "patchedMethods": [],
+    "competitorError": null,
+    "visibleBeforeWrite": "Er zijn 4 lampen!",
+    "visibleAfterWrite": "Er zijn 4 lampen!",
+    "visibleAfterSettling": "Er zijn 4 lampen!",
+    "valueReachedScreen": false,
+    "fellBackToSourceLanguage": false,
+    "nodeWasConnected": false
+  },
+  {
+    "arm": "translation-resilience",
+    "target": "nl",
+    "protectionInstalled": true,
+    "patchedMethods": [
+      "removeChild",
+      "insertBefore",
+      "appendChild",
+      "nodeValueSetter",
+      "competitorPresent"
+    ],
+    "competitorError": null,
+    "visibleBeforeWrite": "Er zijn 4 lampen!",
+    "visibleAfterWrite": "There are 7 lights!",
+    "visibleAfterSettling": "There are 7 lights!",
+    "valueReachedScreen": true,
+    "fellBackToSourceLanguage": true,
+    "nodeWasConnected": true
+  },
+  {
+    "arm": "translate-shield",
+    "target": "nl",
+    "protectionInstalled": true,
+    "patchedMethods": [
+      "removeChild",
+      "insertBefore",
+      "shieldPresent"
+    ],
+    "competitorError": null,
+    "visibleBeforeWrite": "Er zijn 4 lampen!",
+    "visibleAfterWrite": "Er zijn 7 lampen!",
+    "visibleAfterSettling": "Er zijn 7 lampen!",
+    "valueReachedScreen": true,
+    "fellBackToSourceLanguage": false,
+    "nodeWasConnected": false
+  },
+  {
+    "arm": "no-protection",
+    "target": "ru",
+    "protectionInstalled": false,
+    "patchedMethods": [],
+    "competitorError": null,
+    "visibleBeforeWrite": "Здесь 4 лампочки!",
+    "visibleAfterWrite": "Здесь 4 лампочки!",
+    "visibleAfterSettling": "Здесь 4 лампочки!",
+    "valueReachedScreen": false,
+    "fellBackToSourceLanguage": false,
+    "nodeWasConnected": false
+  },
+  {
+    "arm": "translation-resilience",
+    "target": "ru",
+    "protectionInstalled": true,
+    "patchedMethods": [
+      "removeChild",
+      "insertBefore",
+      "appendChild",
+      "nodeValueSetter",
+      "competitorPresent"
+    ],
+    "competitorError": null,
+    "visibleBeforeWrite": "Здесь 4 лампочки!",
+    "visibleAfterWrite": "There are 7 lights!",
+    "visibleAfterSettling": "There are 7 lights!",
+    "valueReachedScreen": true,
+    "fellBackToSourceLanguage": true,
+    "nodeWasConnected": true
+  },
+  {
+    "arm": "translate-shield",
+    "target": "ru",
+    "protectionInstalled": true,
+    "patchedMethods": [
+      "removeChild",
+      "insertBefore",
+      "shieldPresent"
+    ],
+    "competitorError": null,
+    "visibleBeforeWrite": "Здесь 4 лампочки!",
+    "visibleAfterWrite": "There are 7 lights!",
+    "visibleAfterSettling": "There are 7 lights!",
+    "valueReachedScreen": true,
+    "fellBackToSourceLanguage": true,
+    "nodeWasConnected": false
+  }
+]

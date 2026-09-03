@@ -1,0 +1,6197 @@
+{
+  "schema": "translate-shield/engine-fingerprint/1",
+  "meta": {
+    "recordedAtIso": "2026-09-02T09:11:52.367Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0) Gecko/20100101 Firefox/155.0",
+    "brands": null,
+    "platform": "Win32",
+    "language": "ru-RU",
+    "languages": [
+      "ru-RU",
+      "ru",
+      "en-US",
+      "en"
+    ],
+    "pageUrl": "http://localhost:5200/?autoarm=1&engine=firefox-builtin&target=nl&patience=20000",
+    "pageLangAttribute": "fr",
+    "engineLabel": "firefox-builtin",
+    "targetLanguage": "nl"
+  },
+  "fingerprint": {
+    "langBefore": "en",
+    "langAfter": "fr",
+    "langChanged": true,
+    "markersFound": [],
+    "firstForeignMutationAt": 2082,
+    "probes": [
+      {
+        "id": "simple",
+        "label": "Plain sentence",
+        "question": "What wrapper does the engine inject, and is the original TextNode detached?",
+        "before": "There are 4 lights!",
+        "after": "Il y a 7 lumières !",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "Il y a 7 lumières !"
+      },
+      {
+        "id": "interpolated",
+        "label": "Value between two text runs",
+        "question": "Does the engine give the number its own segment, or merge the sentence?",
+        "before": "Total: 19.99 EUR per order",
+        "after": "Total: 19,99 EUR par commande",
+        "changed": true,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 2,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "Total: 19,99 EUR par commande"
+      },
+      {
+        "id": "number-only",
+        "label": "Bare number",
+        "question": "Does a pure number get wrapped at all?",
+        "before": "42",
+        "after": "42",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "42"
+      },
+      {
+        "id": "conditional",
+        "label": "Conditional text with a sibling",
+        "question": "The removeChild crash shape. Is the text node detached while the sibling stays?",
+        "before": "There are 4 lights! (status)",
+        "after": "Il y a 4 lumières ! (statut)",
+        "changed": true,
+        "originalTextNodes": 2,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 2,
+        "textNodesMutatedInPlace": 2,
+        "wrapper": null,
+        "html": "Il y a 4 lumières ! <span>(statut)</span>"
+      },
+      {
+        "id": "inline-nested",
+        "label": "Nested inline elements",
+        "question": "Does the engine reorder inline elements for target-language word order?",
+        "before": "The quick brown fox jumps over the lazy dog",
+        "after": "Le renard brun rapide saute par-dessus le chien paresseux",
+        "changed": true,
+        "originalTextNodes": 5,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 5,
+        "textNodesMutatedInPlace": 5,
+        "wrapper": null,
+        "html": "Le <i>renard</i> brun <b>rapide</b> saute par-dessus le chien paresseux"
+      },
+      {
+        "id": "list",
+        "label": "List items",
+        "question": "Are list items translated independently or merged into one segment?",
+        "before": "First lightSecond lightThird light",
+        "after": "Première lumièreDeuxième lumièreTroisième lumière",
+        "changed": true,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 3,
+        "textNodesMutatedInPlace": 3,
+        "wrapper": null,
+        "html": "<ul><li>Première lumière</li><li>Deuxième lumière</li><li>Troisième lumière</li></ul>"
+      },
+      {
+        "id": "attributes",
+        "label": "Attributes (title, alt, placeholder)",
+        "question": "Does the engine translate attributes, and does that mutate the DOM?",
+        "before": "hover me",
+        "after": "Plaider moi",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "<span title=\"Il y a 4 lumières dans la pièce\">Plaider moi</span><img alt=\"Il y a 4 lumières\" width=\"1\" height=\"1\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"><input type=\"text\" placeholder=\"Il y a 4 lumières\" aria-label=\"sonde de placeholder\">"
+      },
+      {
+        "id": "translate-no",
+        "label": "translate=\"no\"",
+        "question": "Is the documented opt-out actually honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "notranslate-class",
+        "label": "class=\"notranslate\"",
+        "question": "Is the legacy Google opt-out honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "input-value",
+        "label": "Input value",
+        "question": "Does the engine rewrite form values the app reads back?",
+        "before": "There are 4 lights",
+        "after": "There are 4 lights",
+        "changed": false,
+        "originalTextNodes": 0,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<input type=\"text\" aria-label=\"sonde de valeur\">"
+      },
+      {
+        "id": "shadow",
+        "label": "Shadow DOM",
+        "question": "Does the engine reach into a shadow root? Nobody has documented this.",
+        "before": "There are 4 lights inside a shadow root!",
+        "after": "There are 4 lights inside a shadow root!",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<div></div>"
+      },
+      {
+        "id": "plural-one",
+        "label": "Singular agreement",
+        "question": "Grammar risk: what does the target language do at 1?",
+        "before": "There is 1 light in the room.",
+        "after": "Il y a 1 lumière dans la pièce.",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "Il y a 1 lumière dans la pièce."
+      },
+      {
+        "id": "plural-many",
+        "label": "Plural agreement",
+        "question": "Compare with the singular probe. If they differ, digit swapping is unsafe.",
+        "before": "There are 5 lights in the room.",
+        "after": "Il y a 5 lumières dans la salle.",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "Il y a 5 lumières dans la salle."
+      },
+      {
+        "id": "digits",
+        "label": "Digit systems and separators",
+        "question": "Does the engine reshape digits or number separators for the target locale?",
+        "before": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+        "after": "Prix: 1.234.56 et 21 et 100% le 3 mai 2026",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "Prix: 1.234.56 et 21 et 100% le 3 mai 2026"
+      },
+      {
+        "id": "burst-target",
+        "label": "Sustained updates target",
+        "question": "Under many writes per second, does the engine loop or fall behind?",
+        "before": "There are 4 lights!",
+        "after": "There are 2 lights!",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "There are 2 lights!"
+      },
+      {
+        "id": "dynamic",
+        "label": "Content added after translation",
+        "question": "Does the engine re-translate late content, and how fast?",
+        "before": "waiting for the experiment",
+        "after": "En attente de l'expérienceIl y a 8 lumières ajoutées tardivement!Il y a 8 lumières ajoutées tardivement!",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 1,
+        "wrapper": null,
+        "html": "En attente de l'expérience<p>Il y a 8 lumières ajoutées tardivement!</p><p>Il y a 8 lumières ajoutées tardivement!</p>"
+      }
+    ]
+  },
+  "experiments": {
+    "frameworkWrite": {
+      "applicable": true,
+      "wrote": "There are 7 lights!",
+      "nodeWasConnected": true,
+      "visibleBefore": "Il y a 7 lumières !",
+      "visibleAfter": "Il y a 7 lumières !",
+      "visibleTextChanged": false,
+      "valueReachedScreen": true,
+      "translatorReactedAfterMs": 39
+    },
+    "wrapperWrite": {
+      "applicable": false,
+      "reason": "no wrapper element found for this engine"
+    },
+    "untranslatedWindow": {
+      "applicable": false,
+      "reason": "no wrapper element found for this engine"
+    },
+    "lateContent": {
+      "applicable": true,
+      "patienceMs": 20000,
+      "inserted": "There are 8 lights added late!",
+      "translatedAfterMs": 53,
+      "neededProvocation": false,
+      "textAfter": "Il y a 8 lumières ajoutées tardivement!",
+      "translated": true
+    },
+    "burstOneHz": {
+      "applicable": true,
+      "updatesPerSecond": 1,
+      "seconds": 5,
+      "writes": 5,
+      "engineReactions": 0,
+      "reactionsPerWrite": 0,
+      "visibleAfter": "There are 6 lights!"
+    }
+  },
+  "mutations": [
+    {
+      "t": 2082,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-arm",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 2082,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Press Arm before translating anything."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ]
+    },
+    {
+      "t": 2083,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-armed"
+    },
+    {
+      "t": 3110,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "0 mutations recorded"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "3 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 4123,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "3 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "4 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 5129,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "4 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "5 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 6137,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "5 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "6 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 7144,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "6 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "7 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 8170,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "7 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "8 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 9183,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "8 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "9 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 10203,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "9 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "10 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 11216,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "10 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "11 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 12281,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "11 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "12 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 13289,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "12 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "13 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 14299,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "13 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "14 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 15374,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "14 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "15 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 16386,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "15 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "16 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 17551,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "16 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "17 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 18564,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "17 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "18 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 19573,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "18 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "19 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 20584,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "19 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "20 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 21596,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "20 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "21 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 22607,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "21 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "22 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 23613,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "22 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "23 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 24625,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "23 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "24 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 25639,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "24 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "25 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 26648,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "25 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "26 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 27651,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "26 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "27 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 28664,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "27 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "28 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 29178,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "28 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "29 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 29692,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "29 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "30 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 30247,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "30 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "31 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 30763,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "31 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "32 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 31235,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 31236,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-save",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 31236,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-export",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 31236,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-copy",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 31236,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "fingerprint{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"en\",\n  \"langChanged\": false,\n…"
+        }
+      ]
+    },
+    {
+      "t": 31236,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "No translation detected yet. Translate the page, then press Capture again."
+        }
+      ]
+    },
+    {
+      "t": 31236,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-warn"
+    },
+    {
+      "t": 31276,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "32 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "40 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 31792,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "40 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "41 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 31932,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 0,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 31932,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "No translation detected yet. Translate the page, then press Capture again."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 31932,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 31932,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 1,
+      "value": "There are 7 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 32306,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 374,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "41 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "46 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 32820,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 888,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "46 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "47 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 33333,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1401,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "47 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "48 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 33845,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1913,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "48 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "49 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 33929,
+      "type": "childList",
+      "target": "html > body",
+      "targetTag": "BODY",
+      "sinceSelfOpMs": 1997,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "A",
+          "attributes": {
+            "href": "blob:http://localhost:5200/15484bf1-19cc-498f-ba6b-f1672356493f",
+            "download": "fingerprint-firefox-builtin-nl.json"
+          },
+          "text": ""
+        }
+      ]
+    },
+    {
+      "t": 33929,
+      "type": "childList",
+      "target": "html > body",
+      "targetTag": "BODY",
+      "sinceSelfOpMs": 1997,
+      "removed": [
+        {
+          "kind": "element",
+          "tag": "A",
+          "attributes": {
+            "href": "blob:http://localhost:5200/15484bf1-19cc-498f-ba6b-f1672356493f",
+            "download": "fingerprint-firefox-builtin-nl.json"
+          },
+          "text": ""
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 34359,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2427,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "49 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "52 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 34872,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2940,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "52 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "53 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 34936,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3004,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Could not save into the repo (JSON.parse: unexpected end of data at line 1 colum…"
+        }
+      ]
+    },
+    {
+      "t": 34936,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3005,
+      "attribute": "class",
+      "value": "status status-warn"
+    },
+    {
+      "t": 35382,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3450,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "53 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "56 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 35928,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3996,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "56 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "57 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 36441,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4509,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "57 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "58 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 36977,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5045,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "58 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "59 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 37491,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5559,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "59 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "60 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 38021,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 6089,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "60 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "61 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 38534,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 6602,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "61 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "62 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 39047,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 7115,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "62 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "63 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 40546,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 8614,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "63 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "64 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 41561,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 9629,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "64 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "65 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 42574,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 10642,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "65 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "66 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 43616,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 11684,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "66 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "67 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 44735,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 12803,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "67 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "68 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 45747,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 13815,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "68 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "69 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 46760,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 14828,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "69 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "70 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 47770,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 15838,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "70 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "71 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 48817,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 16885,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "71 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "72 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 49825,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 17893,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "72 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "73 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 50845,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 18913,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "73 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "74 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 51849,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 19917,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "74 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "75 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 52861,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 20929,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "frameworkWrite{\n  \"applicable\": true,\n  \"wrote\": \"There are 7 lights!\",\n  \"nodeW…"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20930,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Could not save into the repo (JSON.parse: unexpected end of data at line 1 colum…"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20930,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 20930,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "wrapperWrite{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for t…"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20930,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20930,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "untranslatedWindow{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found…"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "[dynamic]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "P",
+          "attributes": {},
+          "text": "There are 8 lights added late!"
+        }
+      ]
+    },
+    {
+      "t": 52862,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "75 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "86 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 53881,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1019,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "86 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "87 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 54890,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2028,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "87 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "88 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 55899,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3037,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "88 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "89 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 56915,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4053,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "89 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "90 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 57920,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5058,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "90 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "91 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 58935,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 6073,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "91 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "92 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 59958,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 7096,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "92 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "93 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 60974,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 8112,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "93 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "94 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 62001,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 9139,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "94 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "95 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 63016,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 10154,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "95 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "96 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 64026,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 11164,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "96 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "97 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 65037,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 12175,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "97 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "98 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 66048,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 13186,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "98 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "99 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 67149,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 14287,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "99 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "100 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 68161,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 15299,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "100 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "101 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 69171,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 16309,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "101 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "102 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 70171,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 17309,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "102 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "103 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 71182,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 18320,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "103 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "104 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 72193,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 19331,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "104 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "105 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 73202,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20340,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "105 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "106 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 74213,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 21351,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "106 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "107 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 75234,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1021,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "107 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "108 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 76260,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2047,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "108 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "109 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 77261,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3048,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "109 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "110 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 78276,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4063,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "110 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "111 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 79290,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5077,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "111 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "112 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 80320,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 6107,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "112 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "113 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 81331,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 7118,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "113 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "114 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 82343,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 8130,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "114 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "115 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 83347,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 9134,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "115 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "116 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 84361,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 10148,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "116 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "117 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 85369,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 11156,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "117 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "118 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 86394,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 12181,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "118 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "119 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 87404,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 13191,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "119 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "120 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 88427,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 14214,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "120 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "121 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 89429,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 15216,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "121 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "122 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 90439,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 16226,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "122 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "123 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 91447,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 17234,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "123 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "124 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 92461,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 18248,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "124 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "125 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 93464,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 19251,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "125 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "126 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 94473,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20260,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "126 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "127 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 95478,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 21265,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "127 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "128 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 96489,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 22276,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "128 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "129 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 96489,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "lateContent{\n  \"applicable\": true,\n  \"patienceMs\": 20000,\n  \"inserted\": \"There a…"
+        }
+      ]
+    },
+    {
+      "t": 96489,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ]
+    },
+    {
+      "t": 96489,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 96489,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 2 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 97502,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1013,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "129 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "134 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 97502,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 3 lights!",
+      "previous": "There are 2 lights!"
+    },
+    {
+      "t": 98515,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1013,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "134 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "136 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 98515,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 4 lights!",
+      "previous": "There are 3 lights!"
+    },
+    {
+      "t": 99522,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1007,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "136 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "138 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 99522,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 5 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 100533,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1011,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "138 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "140 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 100534,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 1,
+      "value": "There are 6 lights!",
+      "previous": "There are 5 lights!"
+    },
+    {
+      "t": 101559,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1026,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "140 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "142 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 102569,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2036,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "142 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "143 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 103579,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 3046,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "burstOneHz{\n  \"applicable\": true,\n  \"updatesPerSecond\": 1,\n  \"seconds\": 5,\n  \"wr…"
+        }
+      ]
+    },
+    {
+      "t": 103579,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3046,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Experiments done. Export the JSON."
+        }
+      ]
+    },
+    {
+      "t": 103579,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3046,
+      "attribute": "class",
+      "value": "status status-good"
+    },
+    {
+      "t": 103579,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3046,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "143 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "147 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 104588,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4055,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "147 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "148 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 105597,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5064,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "148 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "149 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 106604,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 6071,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "149 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "150 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 107611,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 7078,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "150 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "151 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 108612,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 8079,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "151 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "152 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 109618,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 9085,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "152 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "153 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 110641,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 10108,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "153 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "154 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 111650,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 11117,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "154 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "155 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 112674,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 12141,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "155 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "156 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 113684,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 13151,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "156 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "157 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 114709,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 14176,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "157 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "158 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 115716,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 15183,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "158 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "159 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 116743,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 16210,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "159 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "160 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 117756,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 17223,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "160 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "161 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 118766,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 18233,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "161 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "162 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 119777,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 19244,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "162 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "163 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 120783,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 20250,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "163 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "164 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 121791,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 21258,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "164 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "165 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 122803,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 22270,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "165 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "166 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 123818,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 23285,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "166 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "167 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 124820,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 24287,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "167 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "168 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 125332,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 24799,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "168 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "169 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 125844,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 25312,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "169 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "170 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 126359,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 25826,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "170 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "171 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 126870,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 26337,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "171 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "172 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 127384,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 26851,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "172 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "173 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 127900,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 27367,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "173 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "174 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 128408,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 27875,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "174 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "175 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 128909,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 28376,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "175 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "176 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 129421,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 28888,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "176 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "177 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 129922,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 29389,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "177 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "178 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 130433,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 29900,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "178 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "179 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 130638,
+      "type": "attributes",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": 30105,
+      "attribute": "data-moz-translations-id",
+      "value": "0"
+    },
+    {
+      "t": 130638,
+      "type": "attributes",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": 30105,
+      "attribute": "data-moz-translations-id",
+      "value": "1"
+    },
+    {
+      "t": 130638,
+      "type": "attributes",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30105,
+      "attribute": "data-moz-translations-id",
+      "value": "0"
+    },
+    {
+      "t": 130638,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": 30105,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Troisième lumière"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130638,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30105,
+      "value": "Troisième lumière",
+      "previous": "Third light"
+    },
+    {
+      "t": 130638,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": 30105,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Troisième lumière"
+        }
+      ]
+    },
+    {
+      "t": 130638,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": 30105,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Deuxième lumière"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130638,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30105,
+      "value": "Deuxième lumière",
+      "previous": "Second light"
+    },
+    {
+      "t": 130638,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": 30105,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Deuxième lumière"
+        }
+      ]
+    },
+    {
+      "t": 130638,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": 30105,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Première lumière"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130638,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30105,
+      "value": "Première lumière",
+      "previous": "First light"
+    },
+    {
+      "t": 130638,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": 30105,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Première lumière"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Le "
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "element",
+          "tag": "B",
+          "attributes": {},
+          "text": "rapide"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " brun "
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "element",
+          "tag": "I",
+          "attributes": {},
+          "text": "renard"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " saute par-dessus le chien paresseux"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Le ",
+      "previous": "The "
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Le "
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "renard"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "renard",
+      "previous": "fox"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "renard"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "I",
+          "attributes": {},
+          "text": "renard"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": " brun ",
+      "previous": " brown "
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": " brun "
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "rapide"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "rapide",
+      "previous": "quick"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "rapide"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "B",
+          "attributes": {},
+          "text": "rapide"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": " saute par-dessus le chien paresseux",
+      "previous": " jumps over the lazy dog"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": " saute par-dessus le chien paresseux"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": 30106,
+      "attribute": "data-moz-translations-id",
+      "value": null
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": 30106,
+      "attribute": "data-moz-translations-id",
+      "value": null
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 4 lumières ! "
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "element",
+          "tag": "SPAN",
+          "attributes": {},
+          "text": "(statut)"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Il y a 4 lumières ! ",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 4 lumières ! "
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "(statut)"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "(statut)",
+      "previous": " (status)"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "(statut)"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "SPAN",
+          "attributes": {},
+          "text": "(statut)"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30106,
+      "attribute": "data-moz-translations-id",
+      "value": null
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Total: 19,99 EUR par commande"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " EUR per order"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Total: 19,99 EUR par commande",
+      "previous": "Total: "
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Total: 19,99 EUR par commande"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "En attente de l'expérience",
+      "previous": "waiting for the experiment"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[digits]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Prix: 1.234.56 et 21 et 100% le 3 mai 2026"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Prix: 1.234.56 et 21 et 100% le 3 mai 2026",
+      "previous": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[digits]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Prix: 1.234.56 et 21 et 100% le 3 mai 2026"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[plural-many]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 5 lumières dans la salle."
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Il y a 5 lumières dans la salle.",
+      "previous": "There are 5 lights in the room."
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[plural-many]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 5 lumières dans la salle."
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[plural-one]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 1 lumière dans la pièce."
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Il y a 1 lumière dans la pièce.",
+      "previous": "There is 1 light in the room."
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[plural-one]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 1 lumière dans la pièce."
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30106,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Plaider moi"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 130639,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30106,
+      "value": "Plaider moi",
+      "previous": "hover me"
+    },
+    {
+      "t": 130639,
+      "type": "childList",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30106,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Plaider moi"
+        }
+      ]
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[input-value] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 30106,
+      "attribute": "aria-label",
+      "value": "sonde de valeur"
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 30106,
+      "attribute": "aria-label",
+      "value": "sonde de placeholder"
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 30106,
+      "attribute": "placeholder",
+      "value": "Il y a 4 lumières"
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[attributes] > img",
+      "targetTag": "IMG",
+      "sinceSelfOpMs": 30106,
+      "attribute": "alt",
+      "value": "Il y a 4 lumières"
+    },
+    {
+      "t": 130639,
+      "type": "attributes",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": 30106,
+      "attribute": "title",
+      "value": "Il y a 4 lumières dans la pièce"
+    },
+    {
+      "t": 130945,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 30412,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "179 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "245 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 131016,
+      "type": "childList",
+      "target": "[simple]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30483,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 7 lumières !"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131016,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30483,
+      "value": "Il y a 7 lumières !",
+      "previous": "There are 7 lights!"
+    },
+    {
+      "t": 131016,
+      "type": "childList",
+      "target": "[simple]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30483,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 7 lumières !"
+        }
+      ]
+    },
+    {
+      "t": 131037,
+      "type": "childList",
+      "target": "[burst-target]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30504,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 6 lumières !"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131037,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30504,
+      "value": "Il y a 6 lumières !",
+      "previous": "There are 6 lights!"
+    },
+    {
+      "t": 131037,
+      "type": "childList",
+      "target": "[burst-target]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 30504,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 6 lumières !"
+        }
+      ]
+    },
+    {
+      "t": 131066,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 30533,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 8 lumières ajoutées tardivement!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131066,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30533,
+      "value": "Il y a 8 lumières ajoutées tardivement!",
+      "previous": "There are 8 lights added late!"
+    },
+    {
+      "t": 131066,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 30533,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 8 lumières ajoutées tardivement!"
+        }
+      ]
+    },
+    {
+      "t": 131080,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 30547,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "burstOneHz"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131080,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30547,
+      "value": "burstOneHz",
+      "previous": "burstOneHz"
+    },
+    {
+      "t": 131080,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 30547,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "burstOneHz"
+        }
+      ]
+    },
+    {
+      "t": 131191,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 30658,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": vrai,\n  \"mises à jourPerSecond\": 1,\n  \"secondes\": 5,\n  \"écrits…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131191,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30658,
+      "value": "{\n  \"applicable\": vrai,\n  \"mises à jourPerSecond\": 1,\n  \"secondes\": 5,\n  \"écrits…",
+      "previous": "{\n  \"applicable\": true,\n  \"updatesPerSecond\": 1,\n  \"seconds\": 5,\n  \"writes\": 5,\n…"
+    },
+    {
+      "t": 131191,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 30658,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": vrai,\n  \"mises à jourPerSecond\": 1,\n  \"secondes\": 5,\n  \"écrits…"
+        }
+      ]
+    },
+    {
+      "t": 131204,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 30671,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "lateContent"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131204,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30671,
+      "value": "lateContent",
+      "previous": "lateContent"
+    },
+    {
+      "t": 131204,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 30671,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "lateContent"
+        }
+      ]
+    },
+    {
+      "t": 131345,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 30812,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": vrai,\n  \"patienceMs\": 20000,\n  \"inserté\": \"Il y a 8 lumières a…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131345,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30812,
+      "value": "{\n  \"applicable\": vrai,\n  \"patienceMs\": 20000,\n  \"inserté\": \"Il y a 8 lumières a…",
+      "previous": "{\n  \"applicable\": true,\n  \"patienceMs\": 20000,\n  \"inserted\": \"There are 8 lights…"
+    },
+    {
+      "t": 131345,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 30812,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": vrai,\n  \"patienceMs\": 20000,\n  \"inserté\": \"Il y a 8 lumières a…"
+        }
+      ]
+    },
+    {
+      "t": 131360,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 30827,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "non traduitWindow"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131360,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30827,
+      "value": "non traduitWindow",
+      "previous": "untranslatedWindow"
+    },
+    {
+      "t": 131360,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 30827,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "non traduitWindow"
+        }
+      ]
+    },
+    {
+      "t": 131419,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 30886,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 131419,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 30886,
+      "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…",
+      "previous": "{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for this engine\"\n…"
+    },
+    {
+      "t": 131419,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 30886,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ]
+    },
+    {
+      "t": 131446,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 30913,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "245 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "273 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 131946,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 31413,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "273 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "274 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 132451,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 31918,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "274 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "275 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 132819,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 32286,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 132819,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 32286,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "fingerprint{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"fr\",\n  \"langChanged\": true,\n …"
+        }
+      ]
+    },
+    {
+      "t": 132819,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 32286,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Experiments done. Export the JSON."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 2 original text nodes were detached. Run the experiments."
+        }
+      ]
+    },
+    {
+      "t": 132819,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 32286,
+      "attribute": "class",
+      "value": "status status-bad"
+    },
+    {
+      "t": 132856,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 32323,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "empreinte digitale"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 132856,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 32323,
+      "value": "empreinte digitale",
+      "previous": "fingerprint"
+    },
+    {
+      "t": 132856,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 32323,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "empreinte digitale"
+        }
+      ]
+    },
+    {
+      "t": 132965,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 32432,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "275 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "283 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 133292,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 0,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 133292,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 2 original text nodes were detached. Run the experiments."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 133292,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 133292,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 7 lights!",
+      "previous": "Il y a 7 lumières !"
+    },
+    {
+      "t": 133326,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 34,
+      "value": "Il y a 7 lumières !",
+      "previous": "There are 7 lights!"
+    },
+    {
+      "t": 133326,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 34,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "frameworkWrite{\n  \"applicable\": true,\n  \"wrote\": \"There are 7 lights!\",\n  \"nodeW…"
+        }
+      ]
+    },
+    {
+      "t": 133326,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 34,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ]
+    },
+    {
+      "t": 133326,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 34,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 133326,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 34,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "wrapperWrite{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for t…"
+        }
+      ]
+    },
+    {
+      "t": 133326,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 34,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ]
+    },
+    {
+      "t": 133326,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 34,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 133327,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "untranslatedWindow{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found…"
+        }
+      ]
+    },
+    {
+      "t": 133327,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ]
+    },
+    {
+      "t": 133327,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 133327,
+      "type": "childList",
+      "target": "[dynamic]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "P",
+          "attributes": {},
+          "text": "There are 8 lights added late!"
+        }
+      ]
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 41,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 133368,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 41,
+      "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…",
+      "previous": "{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for this engine\"\n…"
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 41,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ]
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 41,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 133368,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 41,
+      "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…",
+      "previous": "{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for this engine\"\n…"
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 41,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ]
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 41,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "non traduitWindow"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 133368,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 41,
+      "value": "non traduitWindow",
+      "previous": "untranslatedWindow"
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 41,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "non traduitWindow"
+        }
+      ]
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 41,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 8 lumières ajoutées tardivement!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 133368,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 41,
+      "value": "Il y a 8 lumières ajoutées tardivement!",
+      "previous": "There are 8 lights added late!"
+    },
+    {
+      "t": 133368,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 41,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 8 lumières ajoutées tardivement!"
+        }
+      ]
+    },
+    {
+      "t": 133369,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "lateContent{\n  \"applicable\": true,\n  \"patienceMs\": 20000,\n  \"inserted\": \"There a…"
+        }
+      ]
+    },
+    {
+      "t": 133369,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ]
+    },
+    {
+      "t": 133369,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 133369,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 2 lights!",
+      "previous": "Il y a 6 lumières !"
+    },
+    {
+      "t": 133478,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 109,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "283 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "315 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 133992,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 623,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "315 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "316 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 134292,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 923,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 134292,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 923,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "fingerprint{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"fr\",\n  \"langChanged\": true,\n …"
+        }
+      ]
+    },
+    {
+      "t": 134292,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 923,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 2 original text nodes were detached. Run the experiments."
+        }
+      ]
+    },
+    {
+      "t": 134292,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 923,
+      "attribute": "class",
+      "value": "status status-bad"
+    },
+    {
+      "t": 134326,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 957,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "empreinte digitale"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 134326,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 957,
+      "value": "empreinte digitale",
+      "previous": "fingerprint"
+    },
+    {
+      "t": 134326,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 957,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "empreinte digitale"
+        }
+      ]
+    },
+    {
+      "t": 134380,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 3 lights!",
+      "previous": "There are 2 lights!"
+    },
+    {
+      "t": 134493,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 113,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "316 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "325 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 135005,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 625,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "325 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "326 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 135407,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 4 lights!",
+      "previous": "There are 3 lights!"
+    },
+    {
+      "t": 135434,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 27,
+      "value": "Il y a 4 lumières !",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 135506,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 99,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "326 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "329 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 136013,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 606,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "329 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "330 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 136414,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 1,
+      "value": "There are 5 lights!",
+      "previous": "Il y a 4 lumières !"
+    },
+    {
+      "t": 136513,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 100,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "330 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "332 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 136716,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 0,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 136716,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 2 original text nodes were detached. Run the experiments."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 136716,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 136716,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 7 lights!",
+      "previous": "Il y a 7 lumières !"
+    },
+    {
+      "t": 136756,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 40,
+      "value": "Il y a 7 lumières !",
+      "previous": "There are 7 lights!"
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 40,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "frameworkWrite{\n  \"applicable\": true,\n  \"wrote\": \"There are 7 lights!\",\n  \"nodeW…"
+        }
+      ]
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 40,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ]
+    },
+    {
+      "t": 136756,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 40,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 40,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "wrapperWrite{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for t…"
+        }
+      ]
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 40,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ]
+    },
+    {
+      "t": 136756,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 40,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "untranslatedWindow{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found…"
+        }
+      ]
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ]
+    },
+    {
+      "t": 136756,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 136756,
+      "type": "childList",
+      "target": "[dynamic]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "P",
+          "attributes": {},
+          "text": "There are 8 lights added late!"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 53,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136809,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 53,
+      "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…",
+      "previous": "{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for this engine\"\n…"
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 53,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 53,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136809,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 53,
+      "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…",
+      "previous": "{\n  \"applicable\": false,\n  \"reason\": \"no wrapper element found for this engine\"\n…"
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 53,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": faux,\n  \"raison\": \"aucun élément d'emballage trouvé pour ce mo…"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 53,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "non traduitWindow"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136809,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 53,
+      "value": "non traduitWindow",
+      "previous": "untranslatedWindow"
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 53,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "non traduitWindow"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 53,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Il y a 8 lumières ajoutées tardivement!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136809,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 53,
+      "value": "Il y a 8 lumières ajoutées tardivement!",
+      "previous": "There are 8 lights added late!"
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 53,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Il y a 8 lumières ajoutées tardivement!"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "lateContent{\n  \"applicable\": true,\n  \"patienceMs\": 20000,\n  \"inserted\": \"There a…"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ]
+    },
+    {
+      "t": 136809,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 136809,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 2 lights!",
+      "previous": "There are 5 lights!"
+    },
+    {
+      "t": 136963,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"langAnd Avant\": \"en\",\n  \"langAfter\": \"fr\",\n  \"langChanged\": vrai,\n  \"marker…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136963,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 154,
+      "value": "{\n  \"langAnd Avant\": \"en\",\n  \"langAfter\": \"fr\",\n  \"langChanged\": vrai,\n  \"marker…",
+      "previous": "{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"fr\",\n  \"langChanged\": true,\n  \"markersFo…"
+    },
+    {
+      "t": 136963,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"langAnd Avant\": \"en\",\n  \"langAfter\": \"fr\",\n  \"langChanged\": vrai,\n  \"marker…"
+        }
+      ]
+    },
+    {
+      "t": 136977,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 168,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "wrapperWrite"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136977,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 168,
+      "value": "wrapperWrite",
+      "previous": "wrapperWrite"
+    },
+    {
+      "t": 136977,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 168,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "wrapperWrite"
+        }
+      ]
+    },
+    {
+      "t": 136988,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 179,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "frameworkWrite"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 136988,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 179,
+      "value": "frameworkWrite",
+      "previous": "frameworkWrite"
+    },
+    {
+      "t": 136988,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 179,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 137006,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 197,
+      "value": "Il y a 2 lumières !",
+      "previous": "There are 2 lights!"
+    },
+    {
+      "t": 137017,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 208,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "332 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "374 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 137151,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 342,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": vrai,\n  \"patienceMs\": 20000,\n  \"inserté\": \"Il y a 8 lumières a…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 137151,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 342,
+      "value": "{\n  \"applicable\": vrai,\n  \"patienceMs\": 20000,\n  \"inserté\": \"Il y a 8 lumières a…",
+      "previous": "{\n  \"applicable\": true,\n  \"patienceMs\": 20000,\n  \"inserted\": \"There are 8 lights…"
+    },
+    {
+      "t": 137151,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 342,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": vrai,\n  \"patienceMs\": 20000,\n  \"inserté\": \"Il y a 8 lumières a…"
+        }
+      ]
+    },
+    {
+      "t": 137414,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0,
+      "value": "There are 6 lights!",
+      "previous": "Il y a 2 lumières !"
+    },
+    {
+      "t": 137460,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 46,
+      "value": "Il y a 6 lumières !",
+      "previous": "There are 6 lights!"
+    },
+    {
+      "t": 137517,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 103,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "374 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "380 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 137821,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 1,
+      "value": "There are 3 lights!",
+      "previous": "Il y a 6 lumières !"
+    },
+    {
+      "t": 137867,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 47,
+      "value": "Il y a 3 lumières !",
+      "previous": "There are 3 lights!"
+    }
+  ],
+  "notes": "",
+  "mutationsDropped": 0,
+  "selfOps": [
+    {
+      "at": 31932,
+      "description": "frameworkWrite simple"
+    },
+    {
+      "at": 52862,
+      "description": "lateContent dynamic"
+    },
+    {
+      "at": 74213,
+      "description": "provoke"
+    },
+    {
+      "at": 96489,
+      "description": "burst burst-target #1"
+    },
+    {
+      "at": 97502,
+      "description": "burst burst-target #2"
+    },
+    {
+      "at": 98515,
+      "description": "burst burst-target #3"
+    },
+    {
+      "at": 99522,
+      "description": "burst burst-target #4"
+    },
+    {
+      "at": 100533,
+      "description": "burst burst-target #5"
+    },
+    {
+      "at": 133292,
+      "description": "frameworkWrite simple"
+    },
+    {
+      "at": 133327,
+      "description": "lateContent dynamic"
+    },
+    {
+      "at": 133369,
+      "description": "burst burst-target #1"
+    },
+    {
+      "at": 134380,
+      "description": "burst burst-target #2"
+    },
+    {
+      "at": 135407,
+      "description": "burst burst-target #3"
+    },
+    {
+      "at": 136413,
+      "description": "burst burst-target #4"
+    },
+    {
+      "at": 136716,
+      "description": "frameworkWrite simple"
+    },
+    {
+      "at": 136756,
+      "description": "lateContent dynamic"
+    },
+    {
+      "at": 136809,
+      "description": "burst burst-target #1"
+    },
+    {
+      "at": 137414,
+      "description": "burst burst-target #5"
+    },
+    {
+      "at": 137820,
+      "description": "burst burst-target #2"
+    }
+  ]
+}

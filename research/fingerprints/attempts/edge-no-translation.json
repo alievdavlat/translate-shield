@@ -1,0 +1,518 @@
+{
+  "schema": "translate-shield/engine-fingerprint/1",
+  "meta": {
+    "recordedAtIso": "2026-09-02T09:11:17.348Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0",
+    "brands": [
+      "Chromium 152",
+      "Not?A_Brand 24",
+      "Microsoft Edge 152"
+    ],
+    "platform": "Windows",
+    "language": "ru",
+    "languages": [
+      "ru",
+      "en",
+      "en-GB",
+      "en-US"
+    ],
+    "pageUrl": "http://localhost:5200/?autoarm=1&engine=edge-builtin&target=nl&patience=20000",
+    "pageLangAttribute": "en",
+    "engineLabel": "edge-builtin",
+    "targetLanguage": "nl"
+  },
+  "fingerprint": {
+    "langBefore": "en",
+    "langAfter": "en",
+    "langChanged": false,
+    "markersFound": [],
+    "firstForeignMutationAt": 48.5,
+    "probes": [
+      {
+        "id": "simple",
+        "label": "Plain sentence",
+        "question": "What wrapper does the engine inject, and is the original TextNode detached?",
+        "before": "There are 4 lights!",
+        "after": "There are 4 lights!",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights!"
+      },
+      {
+        "id": "interpolated",
+        "label": "Value between two text runs",
+        "question": "Does the engine give the number its own segment, or merge the sentence?",
+        "before": "Total: 19.99 EUR per order",
+        "after": "Total: 19.99 EUR per order",
+        "changed": false,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 3,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "Total: 19.99 EUR per order"
+      },
+      {
+        "id": "number-only",
+        "label": "Bare number",
+        "question": "Does a pure number get wrapped at all?",
+        "before": "42",
+        "after": "42",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "42"
+      },
+      {
+        "id": "conditional",
+        "label": "Conditional text with a sibling",
+        "question": "The removeChild crash shape. Is the text node detached while the sibling stays?",
+        "before": "There are 4 lights! (status)",
+        "after": "There are 4 lights! (status)",
+        "changed": false,
+        "originalTextNodes": 2,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 2,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights!<span> (status)</span>"
+      },
+      {
+        "id": "inline-nested",
+        "label": "Nested inline elements",
+        "question": "Does the engine reorder inline elements for target-language word order?",
+        "before": "The quick brown fox jumps over the lazy dog",
+        "after": "The quick brown fox jumps over the lazy dog",
+        "changed": false,
+        "originalTextNodes": 5,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 5,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "The <b>quick</b> brown <i>fox</i> jumps over the lazy dog"
+      },
+      {
+        "id": "list",
+        "label": "List items",
+        "question": "Are list items translated independently or merged into one segment?",
+        "before": "First lightSecond lightThird light",
+        "after": "First lightSecond lightThird light",
+        "changed": false,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 3,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<ul><li>First light</li><li>Second light</li><li>Third light</li></ul>"
+      },
+      {
+        "id": "attributes",
+        "label": "Attributes (title, alt, placeholder)",
+        "question": "Does the engine translate attributes, and does that mutate the DOM?",
+        "before": "hover me",
+        "after": "hover me",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<span title=\"There are 4 lights in the room\">hover me</span><img alt=\"There are 4 lights\" width=\"1\" height=\"1\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"><input type=\"text\" placeholder=\"There are 4 lights\" aria-label=\"placeholder probe\">"
+      },
+      {
+        "id": "translate-no",
+        "label": "translate=\"no\"",
+        "question": "Is the documented opt-out actually honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "notranslate-class",
+        "label": "class=\"notranslate\"",
+        "question": "Is the legacy Google opt-out honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "input-value",
+        "label": "Input value",
+        "question": "Does the engine rewrite form values the app reads back?",
+        "before": "There are 4 lights",
+        "after": "There are 4 lights",
+        "changed": false,
+        "originalTextNodes": 0,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<input type=\"text\" aria-label=\"value probe\">"
+      },
+      {
+        "id": "shadow",
+        "label": "Shadow DOM",
+        "question": "Does the engine reach into a shadow root? Nobody has documented this.",
+        "before": "There are 4 lights inside a shadow root!",
+        "after": "There are 4 lights inside a shadow root!",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<div></div>"
+      },
+      {
+        "id": "plural-one",
+        "label": "Singular agreement",
+        "question": "Grammar risk: what does the target language do at 1?",
+        "before": "There is 1 light in the room.",
+        "after": "There is 1 light in the room.",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There is 1 light in the room."
+      },
+      {
+        "id": "plural-many",
+        "label": "Plural agreement",
+        "question": "Compare with the singular probe. If they differ, digit swapping is unsafe.",
+        "before": "There are 5 lights in the room.",
+        "after": "There are 5 lights in the room.",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 5 lights in the room."
+      },
+      {
+        "id": "digits",
+        "label": "Digit systems and separators",
+        "question": "Does the engine reshape digits or number separators for the target locale?",
+        "before": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+        "after": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+      },
+      {
+        "id": "burst-target",
+        "label": "Sustained updates target",
+        "question": "Under many writes per second, does the engine loop or fall behind?",
+        "before": "There are 4 lights!",
+        "after": "There are 4 lights!",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights!"
+      },
+      {
+        "id": "dynamic",
+        "label": "Content added after translation",
+        "question": "Does the engine re-translate late content, and how fast?",
+        "before": "waiting for the experiment",
+        "after": "waiting for the experiment",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "waiting for the experiment"
+      }
+    ]
+  },
+  "experiments": {},
+  "mutations": [
+    {
+      "t": 48.5,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-arm",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 48.6,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-capture",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 48.6,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Press Arm before translating anything."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ]
+    },
+    {
+      "t": 48.6,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-armed"
+    },
+    {
+      "t": 548.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "0 mutations recorded"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "4 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 1056.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "4 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "5 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 1201,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1201,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-save",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1201,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-export",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1201,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-copy",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1201,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "fingerprint{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"en\",\n  \"langChanged\": false,\n…"
+        }
+      ]
+    },
+    {
+      "t": 1201,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "No translation detected yet. Translate the page, then press Capture again."
+        }
+      ]
+    },
+    {
+      "t": 1201,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-warn"
+    },
+    {
+      "t": 1550,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "5 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "13 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 1890.7,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 0.1,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 1890.8,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.2,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "No translation detected yet. Translate the page, then press Capture again."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 1890.8,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.2,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 1890.8,
+      "type": "characterData",
+      "target": "",
+      "targetTag": "#text",
+      "sinceSelfOpMs": 0.2,
+      "value": "There are 7 lights!",
+      "previous": "There are 4 lights!"
+    },
+    {
+      "t": 2056.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 166,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "13 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "18 mutations recorded — foreign activity detected"
+        }
+      ]
+    }
+  ],
+  "notes": "",
+  "mutationsDropped": 0,
+  "selfOps": [
+    {
+      "at": 1890.6,
+      "description": "frameworkWrite simple"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "ES2021",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src",
+    "tests",
+    "scripts",
+    "playwright.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests/app",
+    "research"
+  ]
+}

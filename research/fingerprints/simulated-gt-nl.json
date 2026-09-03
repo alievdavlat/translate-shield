@@ -1,0 +1,3096 @@
+{
+  "schema": "translate-shield/engine-fingerprint/1",
+  "meta": {
+    "recordedAtIso": "2026-09-02T11:28:08.222Z",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+    "brands": [
+      "Not=A?Brand 99",
+      "HeadlessChrome 151",
+      "Chromium 151"
+    ],
+    "platform": "Windows",
+    "language": "en-US",
+    "languages": [
+      "en-US"
+    ],
+    "pageUrl": "http://localhost:5200/",
+    "pageLangAttribute": "nl",
+    "engineLabel": "simulated-gt",
+    "targetLanguage": "nl"
+  },
+  "fingerprint": {
+    "langBefore": "en",
+    "langAfter": "nl",
+    "langChanged": true,
+    "markersFound": [
+      "<font>"
+    ],
+    "firstForeignMutationAt": 1037.4,
+    "probes": [
+      {
+        "id": "simple",
+        "label": "Plain sentence",
+        "question": "What wrapper does the engine inject, and is the original TextNode detached?",
+        "before": "There are 4 lights!",
+        "after": "Er zijn 4 lampen!",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Er zijn 4 lampen!</font>"
+      },
+      {
+        "id": "interpolated",
+        "label": "Value between two text runs",
+        "question": "Does the engine give the number its own segment, or merge the sentence?",
+        "before": "Total: 19.99 EUR per order",
+        "after": "Totaal: 19.99 EUR per bestelling",
+        "changed": true,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 3,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Totaal: </font><font style=\"vertical-align: inherit;\">19.99</font><font style=\"vertical-align: inherit;\"> EUR per bestelling</font>"
+      },
+      {
+        "id": "number-only",
+        "label": "Bare number",
+        "question": "Does a pure number get wrapped at all?",
+        "before": "42",
+        "after": "42",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">42</font>"
+      },
+      {
+        "id": "conditional",
+        "label": "Conditional text with a sibling",
+        "question": "The removeChild crash shape. Is the text node detached while the sibling stays?",
+        "before": "There are 4 lights! (status)",
+        "after": "Er zijn 4 lampen! (status)",
+        "changed": true,
+        "originalTextNodes": 2,
+        "detachedTextNodes": 2,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Er zijn 4 lampen!</font><span><font style=\"vertical-align: inherit;\"> (status)</font></span>"
+      },
+      {
+        "id": "inline-nested",
+        "label": "Nested inline elements",
+        "question": "Does the engine reorder inline elements for target-language word order?",
+        "before": "The quick brown fox jumps over the lazy dog",
+        "after": "De snelle bruine vos springt over de luie hond",
+        "changed": true,
+        "originalTextNodes": 5,
+        "detachedTextNodes": 5,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">De </font><b><font style=\"vertical-align: inherit;\">snelle</font></b><font style=\"vertical-align: inherit;\"> bruine </font><i><font style=\"vertical-align: inherit;\">vos</font></i><font style=\"vertical-align: inherit;\"> springt over de luie hond</font>"
+      },
+      {
+        "id": "list",
+        "label": "List items",
+        "question": "Are list items translated independently or merged into one segment?",
+        "before": "First lightSecond lightThird light",
+        "after": "Eerste lampTweede lampDerde lamp",
+        "changed": true,
+        "originalTextNodes": 3,
+        "detachedTextNodes": 3,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<ul><li><font style=\"vertical-align: inherit;\">Eerste lamp</font></li><li><font style=\"vertical-align: inherit;\">Tweede lamp</font></li><li><font style=\"vertical-align: inherit;\">Derde lamp</font></li></ul>"
+      },
+      {
+        "id": "attributes",
+        "label": "Attributes (title, alt, placeholder)",
+        "question": "Does the engine translate attributes, and does that mutate the DOM?",
+        "before": "hover me",
+        "after": "zweef mij",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<span title=\"There are 4 lights in the room\"><font style=\"vertical-align: inherit;\">zweef mij</font></span><img alt=\"There are 4 lights\" width=\"1\" height=\"1\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"><input type=\"text\" placeholder=\"There are 4 lights\" aria-label=\"placeholder probe\">"
+      },
+      {
+        "id": "translate-no",
+        "label": "translate=\"no\"",
+        "question": "Is the documented opt-out actually honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "notranslate-class",
+        "label": "class=\"notranslate\"",
+        "question": "Is the legacy Google opt-out honoured by this engine?",
+        "before": "There are 4 lights! Total: 19.99 EUR",
+        "after": "There are 4 lights! Total: 19.99 EUR",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "There are 4 lights! Total: 19.99 EUR"
+      },
+      {
+        "id": "input-value",
+        "label": "Input value",
+        "question": "Does the engine rewrite form values the app reads back?",
+        "before": "There are 4 lights",
+        "after": "There are 4 lights",
+        "changed": false,
+        "originalTextNodes": 0,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<input type=\"text\" aria-label=\"value probe\">"
+      },
+      {
+        "id": "shadow",
+        "label": "Shadow DOM",
+        "question": "Does the engine reach into a shadow root? Nobody has documented this.",
+        "before": "There are 4 lights inside a shadow root!",
+        "after": "There are 4 lights inside a shadow root!",
+        "changed": false,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 0,
+        "textNodesStillConnected": 1,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": null,
+        "html": "<div></div>"
+      },
+      {
+        "id": "plural-one",
+        "label": "Singular agreement",
+        "question": "Grammar risk: what does the target language do at 1?",
+        "before": "There is 1 light in the room.",
+        "after": "Er is 1 lamp in de kamer.",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Er is 1 lamp in de kamer.</font>"
+      },
+      {
+        "id": "plural-many",
+        "label": "Plural agreement",
+        "question": "Compare with the singular probe. If they differ, digit swapping is unsafe.",
+        "before": "There are 5 lights in the room.",
+        "after": "Er zijn 5 lampen in de kamer.",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Er zijn 5 lampen in de kamer.</font>"
+      },
+      {
+        "id": "digits",
+        "label": "Digit systems and separators",
+        "question": "Does the engine reshape digits or number separators for the target locale?",
+        "before": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026",
+        "after": "Prijzen: 1,234.56 en 21 en 100% op de 3rd van mei 2026",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Prijzen: 1,234.56 en 21 en 100% op de 3rd van mei 2026</font>"
+      },
+      {
+        "id": "burst-target",
+        "label": "Sustained updates target",
+        "question": "Under many writes per second, does the engine loop or fall behind?",
+        "before": "There are 4 lights!",
+        "after": "Er zijn 4 lampen!",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">Er zijn 4 lampen!</font>"
+      },
+      {
+        "id": "dynamic",
+        "label": "Content added after translation",
+        "question": "Does the engine re-translate late content, and how fast?",
+        "before": "waiting for the experiment",
+        "after": "wachten op de experiment",
+        "changed": true,
+        "originalTextNodes": 1,
+        "detachedTextNodes": 1,
+        "textNodesStillConnected": 0,
+        "textNodesMutatedInPlace": 0,
+        "wrapper": {
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "inlineVerticalAlign": "inherit",
+          "computedVerticalAlign": "baseline"
+        },
+        "html": "<font style=\"vertical-align: inherit;\">wachten op de experiment</font>"
+      }
+    ]
+  },
+  "experiments": {
+    "frameworkWrite": {
+      "applicable": true,
+      "wrote": "There are 7 lights!",
+      "nodeWasConnected": false,
+      "visibleBefore": "Er zijn 4 lampen!",
+      "visibleAfter": "Er zijn 4 lampen!",
+      "visibleTextChanged": false,
+      "valueReachedScreen": false,
+      "translatorReactedAfterMs": null
+    },
+    "wrapperWrite": {
+      "applicable": true,
+      "probeId": "number-only",
+      "wrote": "77",
+      "wrapperTag": "FONT",
+      "survived": true,
+      "textAfter": "77",
+      "overwrittenAfterMs": null
+    },
+    "untranslatedWindow": {
+      "applicable": true,
+      "probeId": "conditional",
+      "patienceMs": 6000,
+      "restoredNodeValue": "There are 4 lights!",
+      "restoredNodeStillHeldSourceText": false,
+      "restoredText": "There are 4 lights! (status)",
+      "retranslatedAfterMs": 146.8,
+      "neededProvocation": false,
+      "textAfter": "Er zijn 4 lampen! (status)",
+      "retranslated": true
+    },
+    "lateContent": {
+      "applicable": true,
+      "patienceMs": 6000,
+      "inserted": "There are 8 lights added late!",
+      "translatedAfterMs": 148.2,
+      "neededProvocation": false,
+      "textAfter": "Er zijn 8 lampen toegevoegd laat!",
+      "translated": true
+    },
+    "burstOneHz": {
+      "applicable": true,
+      "updatesPerSecond": 1,
+      "seconds": 5,
+      "writes": 5,
+      "engineReactions": 0,
+      "reactionsPerWrite": 0,
+      "visibleAfter": "Er zijn 4 lampen!"
+    }
+  },
+  "mutations": [
+    {
+      "t": 1037.4,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-arm",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 1037.4,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-capture",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1037.4,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Press Arm before translating anything."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ]
+    },
+    {
+      "t": 1037.5,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-armed"
+    },
+    {
+      "t": 1059.5,
+      "type": "childList",
+      "target": "[simple]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 4 lampen!"
+        }
+      ]
+    },
+    {
+      "t": 1059.6,
+      "type": "childList",
+      "target": "[simple]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There are 4 lights!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1059.6,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Totaal: "
+        }
+      ]
+    },
+    {
+      "t": 1059.6,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Total: "
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1059.8,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "19.99"
+        }
+      ]
+    },
+    {
+      "t": 1059.8,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "19.99"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1059.9,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": " EUR per bestelling"
+        }
+      ]
+    },
+    {
+      "t": 1059.9,
+      "type": "childList",
+      "target": "[interpolated]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " EUR per order"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1059.9,
+      "type": "childList",
+      "target": "[number-only]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "42"
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[number-only]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "42"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 4 lampen!"
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There are 4 lights!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": " (status)"
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[conditional] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " (status)"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "De "
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "The "
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "snelle"
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested] > b",
+      "targetTag": "B",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "quick"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": " bruine "
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " brown "
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "vos"
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested] > i",
+      "targetTag": "I",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "fox"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": " springt over de luie hond"
+        }
+      ]
+    },
+    {
+      "t": 1060,
+      "type": "childList",
+      "target": "[inline-nested]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": " jumps over the lazy dog"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Eerste lamp"
+        }
+      ]
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "First light"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Tweede lamp"
+        }
+      ]
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Second light"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Derde lamp"
+        }
+      ]
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[list] > ul > li",
+      "targetTag": "LI",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Third light"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "zweef mij"
+        }
+      ]
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[attributes] > span",
+      "targetTag": "SPAN",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "hover me"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[plural-one]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er is 1 lamp in de kamer."
+        }
+      ]
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[plural-one]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There is 1 light in the room."
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.1,
+      "type": "childList",
+      "target": "[plural-many]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 5 lampen in de kamer."
+        }
+      ]
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[plural-many]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There are 5 lights in the room."
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[digits]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Prijzen: 1,234.56 en 21 en 100% op de 3rd van mei 2026"
+        }
+      ]
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[digits]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Prices: 1,234.56 and 21 and 100% on the 3rd of May 2026"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[burst-target]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 4 lampen!"
+        }
+      ]
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[burst-target]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There are 4 lights!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[dynamic]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "wachten op de experiment"
+        }
+      ]
+    },
+    {
+      "t": 1060.2,
+      "type": "childList",
+      "target": "[dynamic]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "waiting for the experiment"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1102.5,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1102.6,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-save",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1102.6,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-export",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1102.6,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-copy",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": null,
+      "attribute": "disabled",
+      "value": null
+    },
+    {
+      "t": 1102.7,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": null,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "fingerprint{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"nl\",\n  \"langChanged\": true,\n …"
+        }
+      ]
+    },
+    {
+      "t": 1102.7,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Armed. Now turn on your browser translation, then press Capture."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 21 original text nodes were detached. Run the experiments."
+        }
+      ]
+    },
+    {
+      "t": 1102.7,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": null,
+      "attribute": "class",
+      "value": "status status-bad"
+    },
+    {
+      "t": 1152.9,
+      "type": "attributes",
+      "target": "html > body > section > div > button#btn-experiments",
+      "targetTag": "BUTTON",
+      "sinceSelfOpMs": 0.1,
+      "attribute": "disabled",
+      "value": ""
+    },
+    {
+      "t": 1152.9,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "DETACHING ENGINE: 21 original text nodes were detached. Run the experiments."
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 1152.9,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 1306.6,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 153.8,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "fingerprint"
+        }
+      ]
+    },
+    {
+      "t": 1306.8,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 154,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "fingerprint"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1306.8,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"nl\",\n  \"langChanged\": true,\n  \"markersFo…"
+        }
+      ]
+    },
+    {
+      "t": 1306.8,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"langBefore\": \"en\",\n  \"langAfter\": \"nl\",\n  \"langChanged\": true,\n  \"markersFo…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 1540.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 387.5,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "0 mutations recorded"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "60 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 2038.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 885.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "60 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "61 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 2545.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1392.4,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "61 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "62 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 3043.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1890.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "62 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "63 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 3540.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2387.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "63 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "64 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 4052,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2899.2,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "64 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "65 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 4538.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3386.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "65 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "66 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 5047.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3894.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "66 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "67 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 5543.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4390.3,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "67 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "68 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 6039.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4887.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "68 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "69 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 6538.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5385.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "69 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "70 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 7037.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5884.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "70 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "71 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 7176.4,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0.1,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "frameworkWrite{\n  \"applicable\": true,\n  \"wrote\": \"There are 7 lights!\",\n  \"nodeW…"
+        }
+      ]
+    },
+    {
+      "t": 7176.4,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 1/5: frameworkWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ]
+    },
+    {
+      "t": 7176.4,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 7176.4,
+      "type": "childList",
+      "target": "[number-only] > font",
+      "targetTag": "FONT",
+      "sinceSelfOpMs": 0.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "42"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "77"
+        }
+      ]
+    },
+    {
+      "t": 7330.7,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 154.4,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "frameworkWrite"
+        }
+      ]
+    },
+    {
+      "t": 7330.8,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 154.5,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "frameworkWrite"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 7330.8,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154.5,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "{\n  \"applicable\": true,\n  \"wrote\": \"Er zijn 7 lampen!\",\n  \"nodeWasConnected\": fa…"
+        }
+      ]
+    },
+    {
+      "t": 7330.8,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154.5,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": true,\n  \"wrote\": \"There are 7 lights!\",\n  \"nodeWasConnected\": …"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 7547.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 370.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "71 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "80 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 8044.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 868.3,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "80 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "81 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 8541.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1364.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "81 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "82 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 9040.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1863.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "82 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "83 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 9545.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2368.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "83 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "84 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 10042.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2866.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "84 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "85 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 10538.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3361.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "85 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "86 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 11051.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3874.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "86 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "87 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 11549.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4373.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "87 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "88 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 12052.4,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4876.2,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "88 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "89 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 12538.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5362.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "89 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "90 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 13051.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5875.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "90 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "91 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 13548.9,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 358.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "91 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "92 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 14046,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 856,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "92 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "93 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 14542.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1352.3,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "93 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "94 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 15040.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1850.2,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "94 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "95 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 15552,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2361.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "95 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "96 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 16045.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2855.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "96 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "97 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 16543.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3353,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "97 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "98 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 17041.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 3851.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "98 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "99 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 17552.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4362.4,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "99 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "100 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 18052.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 4862.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "100 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "101 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 18549.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5359.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "101 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "102 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 19044.7,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 5854.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "102 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "103 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 19540.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 6350.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "103 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "104 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 19575,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "wrapperWrite{\n  \"applicable\": true,\n  \"probeId\": \"number-only\",\n  \"wrote\": \"77\",…"
+        }
+      ]
+    },
+    {
+      "t": 19575.1,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 2/5: wrapperWrite"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ]
+    },
+    {
+      "t": 19575.1,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 19575.1,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0.1,
+      "removed": [],
+      "added": [
+        {
+          "kind": "text",
+          "value": "There are 4 lights!"
+        }
+      ]
+    },
+    {
+      "t": 19575.1,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0.1,
+      "removed": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 4 lampen!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19726.6,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 151.6,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 4 lampen!"
+        }
+      ]
+    },
+    {
+      "t": 19726.6,
+      "type": "childList",
+      "target": "[conditional]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 151.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There are 4 lights!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19726.6,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 151.6,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "wrapperWrite"
+        }
+      ]
+    },
+    {
+      "t": 19726.6,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 151.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "wrapperWrite"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19726.6,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 151.6,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "{\n  \"applicable\": true,\n  \"probeId\": \"number-only\",\n  \"wrote\": \"77\",\n  \"wrapperT…"
+        }
+      ]
+    },
+    {
+      "t": 19726.6,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 151.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": true,\n  \"probeId\": \"number-only\",\n  \"wrote\": \"77\",\n  \"wrapperT…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19726.8,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "untranslatedWindow{\n  \"applicable\": true,\n  \"probeId\": \"conditional\",\n  \"patienc…"
+        }
+      ]
+    },
+    {
+      "t": 19726.8,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 3/5: untranslatedWindow"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ]
+    },
+    {
+      "t": 19726.8,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 19726.8,
+      "type": "childList",
+      "target": "[dynamic]",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "P",
+          "attributes": {},
+          "text": "There are 8 lights added late!"
+        }
+      ]
+    },
+    {
+      "t": 19880.7,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 154,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "Er zijn 8 lampen toegevoegd laat!"
+        }
+      ]
+    },
+    {
+      "t": 19880.9,
+      "type": "childList",
+      "target": "[dynamic] > p",
+      "targetTag": "P",
+      "sinceSelfOpMs": 154.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "There are 8 lights added late!"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19880.9,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 154.1,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "untranslatedWindow"
+        }
+      ]
+    },
+    {
+      "t": 19880.9,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 154.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "untranslatedWindow"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19880.9,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154.1,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "{\n  \"applicable\": true,\n  \"probeId\": \"conditional\",\n  \"patienceMs\": 6000,\n  \"res…"
+        }
+      ]
+    },
+    {
+      "t": 19880.9,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 154.1,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": true,\n  \"probeId\": \"conditional\",\n  \"patienceMs\": 6000,\n  \"res…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 19881.2,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 0,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "lateContent{\n  \"applicable\": true,\n  \"patienceMs\": 6000,\n  \"inserted\": \"There ar…"
+        }
+      ]
+    },
+    {
+      "t": 19881.2,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 4/5: lateContent"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ]
+    },
+    {
+      "t": 19881.2,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 0.1,
+      "attribute": "class",
+      "value": "status status-busy"
+    },
+    {
+      "t": 20035,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 153.9,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "lateContent"
+        }
+      ]
+    },
+    {
+      "t": 20035.1,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 153.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "lateContent"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 20035.1,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 153.9,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "{\n  \"applicable\": true,\n  \"patienceMs\": 6000,\n  \"inserted\": \"Er zijn 8 lampen to…"
+        }
+      ]
+    },
+    {
+      "t": 20035.1,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 153.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": true,\n  \"patienceMs\": 6000,\n  \"inserted\": \"There are 8 lights …"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 20050.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 169.3,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "104 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "133 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 20545.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 664,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "133 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "134 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 21038.1,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 152.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "134 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "135 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 21551.8,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 666.5,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "135 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "136 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 22047.3,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 154.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "136 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "137 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 22546.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 653.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "137 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "138 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 23042.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 141.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "138 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "139 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 23539,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 638.6,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "139 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "140 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 24050.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 139.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "140 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "141 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 24547.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 636.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "141 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "142 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 25043.6,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1132.9,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "142 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "143 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 25538,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 1627.2,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "143 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "144 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 26051.2,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2140.4,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "144 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "145 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 26423.6,
+      "type": "childList",
+      "target": "html > body > main > div#results",
+      "targetTag": "DIV",
+      "sinceSelfOpMs": 2512.8,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "DIV",
+          "attributes": {
+            "class": "result"
+          },
+          "text": "burstOneHz{\n  \"applicable\": true,\n  \"updatesPerSecond\": 1,\n  \"seconds\": 5,\n  \"wr…"
+        }
+      ]
+    },
+    {
+      "t": 26423.6,
+      "type": "childList",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2512.8,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "Running experiment 5/5: burstOneHz"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "Experiments done. Export the JSON."
+        }
+      ]
+    },
+    {
+      "t": 26423.6,
+      "type": "attributes",
+      "target": "html > body > section > p#status",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2512.8,
+      "attribute": "class",
+      "value": "status status-good"
+    },
+    {
+      "t": 26536.4,
+      "type": "attributes",
+      "target": "html > body > section > div > label > input#engine-label",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2625.6,
+      "attribute": "style",
+      "value": "caret-color: transparent !important;"
+    },
+    {
+      "t": 26536.4,
+      "type": "attributes",
+      "target": "html > body > section > div > label > input#target-language",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2625.6,
+      "attribute": "style",
+      "value": "caret-color: transparent !important;"
+    },
+    {
+      "t": 26536.4,
+      "type": "attributes",
+      "target": "html > body > section > label > textarea#notes",
+      "targetTag": "TEXTAREA",
+      "sinceSelfOpMs": 2625.7,
+      "attribute": "style",
+      "value": "caret-color: transparent !important;"
+    },
+    {
+      "t": 26536.5,
+      "type": "attributes",
+      "target": "html > body > section > textarea#json-output",
+      "targetTag": "TEXTAREA",
+      "sinceSelfOpMs": 2625.7,
+      "attribute": "style",
+      "value": "caret-color: transparent !important;"
+    },
+    {
+      "t": 26536.5,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2625.7,
+      "attribute": "style",
+      "value": "caret-color: transparent !important;"
+    },
+    {
+      "t": 26536.5,
+      "type": "attributes",
+      "target": "[input-value] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2625.7,
+      "attribute": "style",
+      "value": "caret-color: transparent !important;"
+    },
+    {
+      "t": 26537.5,
+      "type": "childList",
+      "target": "html > body > section > p#counter",
+      "targetTag": "P",
+      "sinceSelfOpMs": 2626.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "145 mutations recorded — foreign activity detected"
+        }
+      ],
+      "added": [
+        {
+          "kind": "text",
+          "value": "155 mutations recorded — foreign activity detected"
+        }
+      ]
+    },
+    {
+      "t": 26700.5,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 2789.7,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "burstOneHz"
+        }
+      ]
+    },
+    {
+      "t": 26700.5,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > h4",
+      "targetTag": "H4",
+      "sinceSelfOpMs": 2789.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "burstOneHz"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 26700.5,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 2789.7,
+      "removed": [],
+      "added": [
+        {
+          "kind": "element",
+          "tag": "FONT",
+          "attributes": {
+            "style": "vertical-align: inherit;"
+          },
+          "text": "{\n  \"applicable\": true,\n  \"updatesPerSecond\": 1,\n  \"seconds\": 5,\n  \"writes\": 5,\n…"
+        }
+      ]
+    },
+    {
+      "t": 26700.5,
+      "type": "childList",
+      "target": "html > body > main > div#results > div > pre",
+      "targetTag": "PRE",
+      "sinceSelfOpMs": 2789.7,
+      "removed": [
+        {
+          "kind": "text",
+          "value": "{\n  \"applicable\": true,\n  \"updatesPerSecond\": 1,\n  \"seconds\": 5,\n  \"writes\": 5,\n…"
+        }
+      ],
+      "added": []
+    },
+    {
+      "t": 26743.6,
+      "type": "attributes",
+      "target": "html > body > section > div > label > input#engine-label",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2832.8,
+      "attribute": "style",
+      "value": ""
+    },
+    {
+      "t": 26743.6,
+      "type": "attributes",
+      "target": "html > body > section > div > label > input#target-language",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2832.8,
+      "attribute": "style",
+      "value": ""
+    },
+    {
+      "t": 26743.6,
+      "type": "attributes",
+      "target": "html > body > section > label > textarea#notes",
+      "targetTag": "TEXTAREA",
+      "sinceSelfOpMs": 2832.8,
+      "attribute": "style",
+      "value": ""
+    },
+    {
+      "t": 26743.6,
+      "type": "attributes",
+      "target": "html > body > section > textarea#json-output",
+      "targetTag": "TEXTAREA",
+      "sinceSelfOpMs": 2832.8,
+      "attribute": "style",
+      "value": ""
+    },
+    {
+      "t": 26743.6,
+      "type": "attributes",
+      "target": "[attributes] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2832.8,
+      "attribute": "style",
+      "value": ""
+    },
+    {
+      "t": 26743.6,
+      "type": "attributes",
+      "target": "[input-value] > input",
+      "targetTag": "INPUT",
+      "sinceSelfOpMs": 2832.8,
+      "attribute": "style",
+      "value": ""
+    }
+  ],
+  "notes": "",
+  "mutationsDropped": 0,
+  "selfOps": [
+    {
+      "at": 1152.8,
+      "description": "frameworkWrite simple"
+    },
+    {
+      "at": 7176.3,
+      "description": "wrapperWrite number-only"
+    },
+    {
+      "at": 13190.1,
+      "description": "provoke"
+    },
+    {
+      "at": 19575,
+      "description": "untranslatedWindow conditional"
+    },
+    {
+      "at": 19726.8,
+      "description": "lateContent dynamic"
+    },
+    {
+      "at": 19881.2,
+      "description": "burst burst-target #1"
+    },
+    {
+      "at": 20885.3,
+      "description": "burst burst-target #2"
+    },
+    {
+      "at": 21892.5,
+      "description": "burst burst-target #3"
+    },
+    {
+      "at": 22900.5,
+      "description": "burst burst-target #4"
+    },
+    {
+      "at": 23910.8,
+      "description": "burst burst-target #5"
+    }
+  ]
+}
