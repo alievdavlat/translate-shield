@@ -25,7 +25,7 @@ initTranslateShield()
 ```
 
 The whole setup. No-op on the server, armed only after a translator rewrites the page, inert on
-engines that do not need it. No dependencies, 13.3 kB packed.
+engines that do not need it. No dependencies, about 13 kB packed.
 
 Firefox and Edge readers do not hit this bug. Check [Browser support](#browser-support) first.
 

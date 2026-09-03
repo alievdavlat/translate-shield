@@ -19,28 +19,33 @@ const wrappers = new WeakSet<Element>()
 const intercepted = new WeakSet<Text>()
 const interceptedRefs = new Set<WeakRef<Text>>()
 
+/**
+ * Every descriptor lookup is deferred until a DOM actually exists. Reading
+ * `Node.prototype` at module scope throws `ReferenceError: Node is not defined`
+ * on the server, which would break any app that imports this from shared code.
+ */
 const descriptorOf = (property: InterceptedProperty): PropertyDescriptor | undefined => {
+  if (typeof Node === 'undefined') return undefined
   if (property === 'data') {
     return Object.getOwnPropertyDescriptor(CharacterData.prototype, 'data')
   }
   return Object.getOwnPropertyDescriptor(Node.prototype, property)
 }
 
-const nodeValueDescriptor = descriptorOf('nodeValue')
-const textContentDescriptor = descriptorOf('textContent')
-
 const readNodeValue = (node: Text): string => {
-  if (!nodeValueDescriptor?.get) return ''
-  return String(nodeValueDescriptor.get.call(node) ?? '')
+  const getter = descriptorOf('nodeValue')?.get
+  if (!getter) return ''
+  return String(getter.call(node) ?? '')
 }
 
 const readWrapper = (wrapper: Element): string => {
-  if (!textContentDescriptor?.get) return ''
-  return String(textContentDescriptor.get.call(wrapper) ?? '')
+  const getter = descriptorOf('textContent')?.get
+  if (!getter) return ''
+  return String(getter.call(wrapper) ?? '')
 }
 
 const writeWrapper = (wrapper: Element, value: string): void => {
-  textContentDescriptor?.set?.call(wrapper, value)
+  descriptorOf('textContent')?.set?.call(wrapper, value)
 }
 
 const forwardWrite = (node: Text, next: string): void => {

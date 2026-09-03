@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm run smoke
+      - run: npx publint --strict
+      - run: npx @arethetypeswrong/cli --pack .
+      - run: npx playwright test unshielded shielded comparison merge-text shadow-dom conflicts replace-child recorder save-into-repo

@@ -66,9 +66,10 @@
     "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "summarise": "node scripts/summarise-fingerprints.mjs",
-    "verify": "npm run typecheck && npm run build && npx publint --strict && npx attw --pack .",
-    "prepublishOnly": "npm run build",
-    "postbuild": "node scripts/assert-directives.mjs"
+    "verify": "npm run typecheck && npm run build && npm run smoke && npx publint --strict && npx @arethetypeswrong/cli --pack .",
+    "prepublishOnly": "npm run typecheck && npm run build && npm run smoke && npx publint --strict",
+    "postbuild": "node scripts/assert-directives.mjs",
+    "smoke": "node scripts/smoke.mjs"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.0",
@@ -99,8 +100,7 @@
   },
   "homepage": "https://github.com/alievdavlat/translate-shield#readme",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "typesVersions": {
     "*": {

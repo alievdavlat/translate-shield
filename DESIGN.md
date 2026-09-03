@@ -107,7 +107,7 @@ refusal is silent.
 One package, two subpath entries: `.` for the runtime, `./react` for `NoTranslate` and
 `useTranslationDetected`, React an optional peer. A monorepo was rejected as two release trains for
 packages with no independent life. Cost: a React-only fix bumps the version for runtime-only
-consumers. Tarball 13.3 kB.
+consumers. Tarball about 13 kB.
 
 bunchee over tsup. tsup's own README says it is unmaintained, and neither `banner` nor
 `esbuildOptions.banner` applied the client directive in a multi-entry config;
