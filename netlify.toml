@@ -1,0 +1,15 @@
+# The demo imports the built library from ../dist, which is gitignored, so the
+# library build has to run before the demo build. publish is the demo's output,
+# not the repository's.
+[build]
+  command = "npm run build && npm run build -w demo"
+  publish = "demo/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# No SPA fallback on purpose. The page loads ./unshielded.html and
+# ./shielded.html into iframes; a catch-all redirect to index.html would serve
+# the host page into its own frames instead of a 404, which renders the demo
+# inside itself. The page now detects and reports that, but the right fix is to
+# never serve it.
