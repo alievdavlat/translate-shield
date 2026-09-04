@@ -38,12 +38,13 @@ Four updates to a value in view, real Chrome, live Dutch translation.
 | `NotFoundError` crash | app unmounts | fixed | fixed | fixed |
 | Value keeps updating | frozen | still frozen | yes | yes |
 | Removed text disappears | n/a | stays on screen | yes | yes |
-| Language while updating | n/a | n/a | 150-200 ms of source language per update | 0 ms |
+| Language while updating | n/a | n/a | 100-150 ms of source language per update | 0 ms |
 | Text when the reader looks | `Er zijn 4 lampen!`, stale | n/a | `There are 7 lights!` | `Er zijn 7 lampen!` |
 
-First three rows: `research/comparison.json`. Language row: `research/flicker.json`, where
-restore-and-retranslate spends 700 ms of the sequence in source language and mirroring 0 ms. Last
-row: `research/head-to-head-real-chrome.json`.
+First three rows: `research/comparison.json`. Language row: `research/flicker.json`, five
+replicates of four updates, where restore-and-retranslate spends 500 to 600 ms of the sequence in
+source language and mirroring 0 ms in all twenty. Last row:
+`research/head-to-head-real-chrome.json`.
 
 ## Next.js
 
@@ -78,6 +79,49 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 A second call returns the existing handle, so a double-invoked development effect leaves one
 shield.
+
+### The hydration warning is not this library
+
+A translated page produces this before any of the above runs:
+
+```
+A tree hydrated but some attributes of the server rendered HTML didn't match the client properties.
+-  lang="ru"
+-  className="... translated-ltr"
+```
+
+The translator rewrites the document root and a set of text-carrying attributes while the page is
+still loading, so React hydrates against a DOM the server never sent.
+
+| Surface | What the translator does | Evidence |
+|---|---|---|
+| `<html lang>` | rewritten to the target language, on every engine recorded | `research/root-attributes.json`, `research/fingerprints/` |
+| `<html class>` | Chrome appends `translated-ltr` | `research/root-attributes.json` |
+| `alt`, `title`, `placeholder`, `aria-label`, submit `value` | translated in place | `research/attributes.json` |
+| `data-*` attributes, `meta[name=description]` | left alone | `research/attributes.json` |
+
+Nothing here causes it and nothing here can prevent it: it happens before hydration, and
+`initTranslateShield` runs after. React keeps the translator's value either way, so this is a
+warning about the console, not a broken page. Two fixes, depending on what the attribute holds.
+
+Text that should be translated, which is most `alt` and `aria-label` copy:
+
+```tsx
+<html lang="en" suppressHydrationWarning>
+```
+
+`suppressHydrationWarning` covers one element's own attributes, so the root needs it for `lang` and
+`class`, and any element whose `alt` or `title` you want translated needs its own.
+
+Text that should not be translated, such as a code, a price or an order number, opts out instead,
+and the opt-out covers the attribute as well as the text:
+
+```tsx
+<img translate="no" className="notranslate" alt="Order PIN-4417-02" />
+```
+
+All three opt-out probes held on Chrome (`research/attributes.json`). That is the same guarantee
+`NoTranslate` relies on.
 
 ## Protecting a value
 

@@ -87,17 +87,18 @@ Two more fell the same way. A head-to-head was invalidated on its first run beca
 
 ## What a repair costs the reader
 
-Restoring the original node and letting the translator retranslate it puts source-language text on screen for 150 to 200ms per update. Mirroring the new value into the translator's own wrapper shows it for 0ms. Both end correct and translated. Four updates, visible text sampled 25 times each (`research/flicker.json`, `npx playwright test flicker`).
+Restoring the original node and letting the translator retranslate it puts source-language text on screen for 100 to 150ms per update. Mirroring the new value into the translator's own wrapper shows it for 0ms. Both end correct and translated. Five replicates of four updates, visible text sampled every 50ms for 1.5s after each one (`research/flicker.json`, `npx playwright test flicker`).
 
-| Update | Restore and retranslate | Mirror into the wrapper |
+| Across the 20 updates | Restore and retranslate | Mirror into the wrapper |
 |---|---|---|
-| 4 to 5 | 150ms of English | 0ms |
-| 5 to 6 | 200ms | 0ms |
-| 6 to 7 | 200ms | 0ms |
-| 7 to 8 | 150ms | 0ms |
-| Total | 700ms | 0ms |
+| Shortest update | 100ms of source language | 0ms |
+| Median update | 150ms | 0ms |
+| Longest update | 150ms | 0ms |
+| A sequence of four | 500 to 600ms | 0ms |
 
 A price that changes once is a flash nobody reports. A counter pays it every tick.
+
+This section previously read 150 to 200ms per update and 700ms per sequence, taken from a single run. Five replicates do not reproduce it, and the report now keeps all of them, because the cost is however long Chrome takes to notice a restored node, and one run of that is not a fact about the strategy. Sampling every 50ms also quantises every figure here to 50ms.
 
 Two limits. The figure came from a probe page with one text node under observation, not a production component tree. And it is Chrome-shaped: on Yandex a restored node comes back already translated (`Es gibt 4 Lichter!`), because Yandex overwrites the detached original and keeps the source string in the wrapper's `data-value`. It re-wrapped that node 454.9ms later, showing no source-language text at all.
 

@@ -1,0 +1,90 @@
+{
+  "schema": "translate-shield/attributes/1",
+  "engine": "chrome built-in",
+  "target": "ru",
+  "probes": [
+    {
+      "id": "p-alt",
+      "attribute": "alt",
+      "optOut": false,
+      "before": "There are four lights on the panel in an alt attribute",
+      "after": "На панели в атрибуте alt отображаются четыре индикатора.",
+      "translated": true
+    },
+    {
+      "id": "p-title",
+      "attribute": "title",
+      "optOut": false,
+      "before": "There are four lights on the panel in a title attribute",
+      "after": "На панели в атрибуте заголовка отображаются четыре индикатора.",
+      "translated": true
+    },
+    {
+      "id": "p-placeholder",
+      "attribute": "placeholder",
+      "optOut": false,
+      "before": "There are four lights on the panel in a placeholder",
+      "after": "На панели в заглушке расположены четыре индикатора.",
+      "translated": true
+    },
+    {
+      "id": "p-aria",
+      "attribute": "aria-label",
+      "optOut": false,
+      "before": "There are four lights on the panel in an aria-label",
+      "after": "На панели, обозначенной символом aria-label, расположены четыре индикатора.",
+      "translated": true
+    },
+    {
+      "id": "p-value",
+      "attribute": "value",
+      "optOut": false,
+      "before": "There are four lights on the panel in a submit value",
+      "after": "На панели в ",
+      "translated": true
+    },
+    {
+      "id": "p-content",
+      "attribute": "data-content",
+      "optOut": false,
+      "before": "There are four lights on the panel in a data attribute",
+      "after": "There are four lights on the panel in a data attribute",
+      "translated": false
+    },
+    {
+      "id": "p-alt-optout",
+      "attribute": "alt",
+      "optOut": true,
+      "before": "There are four lights on the panel in a protected alt",
+      "after": "There are four lights on the panel in a protected alt",
+      "translated": false
+    },
+    {
+      "id": "p-title-optout",
+      "attribute": "title",
+      "optOut": true,
+      "before": "There are four lights on the panel in a protected title",
+      "after": "There are four lights on the panel in a protected title",
+      "translated": false
+    },
+    {
+      "id": "p-placeholder-optout",
+      "attribute": "placeholder",
+      "optOut": true,
+      "before": "There are four lights on the panel in a protected placeholder",
+      "after": "There are four lights on the panel in a protected placeholder",
+      "translated": false
+    }
+  ],
+  "metaDescription": {
+    "after": "There are four lights on the panel in the description meta tag"
+  },
+  "translatedAttributes": [
+    "alt",
+    "title",
+    "placeholder",
+    "aria-label",
+    "value"
+  ],
+  "optOutHeld": true
+}

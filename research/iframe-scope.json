@@ -1,0 +1,11 @@
+{
+  "host": {
+    "fonts": 4,
+    "text": "Er zitten vier lampjes op het paneel en de inspecteur telde "
+  },
+  "child": {
+    "fonts": 4,
+    "text": "Er zitten vier lampjes op het paneel en de inspecteur telde "
+  },
+  "childFrameFound": true
+}

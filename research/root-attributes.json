@@ -1,0 +1,29 @@
+{
+  "schema": "translate-shield/root-attributes/1",
+  "engine": "chrome built-in",
+  "target": "ru",
+  "before": {
+    "lang": "en",
+    "className": null,
+    "attributes": {
+      "lang": "en"
+    },
+    "bodyClassName": null
+  },
+  "after": {
+    "lang": "ru",
+    "className": "translated-ltr",
+    "attributes": {
+      "lang": "ru",
+      "class": "translated-ltr"
+    },
+    "bodyClassName": null
+  },
+  "changed": {
+    "lang": true,
+    "className": true,
+    "addedAttributes": [
+      "class"
+    ]
+  }
+}

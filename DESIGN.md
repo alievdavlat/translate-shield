@@ -96,8 +96,10 @@ Accepted 2026-09-02. A wrong entry is superseded, never edited.
 
 Mirror, do not restore. A `MutationObserver` forwards writes into the engine's wrapper; the
 original node stays detached. Restore-and-retranslate, what the incumbent ships, puts
-source-language text on screen for 150 to 200ms per update and never repairs an element below the
-fold. Cost: Yandex repairs restored nodes itself, so there the margin is zero.
+source-language text on screen for 100 to 150ms per update and never repairs an element below the
+fold. Cost: Yandex repairs restored nodes itself, so there the margin is zero. That figure read 150
+to 200ms until 2026-09-04, taken from a single run; five replicates corrected it, and the decision
+is unchanged.
 
 Gate the numeric merge on `Intl.PluralRules`. Digits merge only when old and new share a plural
 category in the target locale. Ungated, it turned `Здесь 4 лампочки!` into `Здесь 7 лампочки!`.

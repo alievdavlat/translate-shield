@@ -59,8 +59,11 @@ does not enter shadow roots.
 |---|---|---|---|
 | What wakes a translator that has gone idle? | `element.scrollIntoView()` on the node, at 158 ms. Ten other candidates and a no-signal control did nothing within 10 s | `research/provocation.json` | `npx playwright test provocation` |
 | Does Chrome repair a restored source-language node? | in the viewport, after 211 ms; off screen, not within 15 s | `research/visibility-confound.json` | `npx playwright test visibility-confound` |
-| What does restore-and-retranslate cost the reader? | 150 to 200 ms of source-language text per update, 700 ms across four updates. Mirroring into the wrapper: 0 ms | `research/flicker.json` | `npx playwright test flicker` |
+| What does restore-and-retranslate cost the reader? | 100 to 150 ms of source-language text per update, 500 to 600 ms across a sequence of four, over five replicates. Mirroring into the wrapper: 0 ms in all twenty updates | `research/flicker.json` | `npx playwright test flicker` |
 | Does a shielded value survive Chrome's own translator? | nl: unprotected freezes at 4, `translation-resilience` shows `There are 7 lights!` in English, translate-shield shows `Er zijn 7 lampen!`. ru: translate-shield refuses the merge and shows the English string | `research/head-to-head-real-chrome.json` | `npx playwright test head-to-head-real-chrome` |
+| What does a translator write onto `<html>` itself? | Chrome rewrites `lang` from `en` to `ru` and adds `class="translated-ltr"` where there was no class. Every engine recorded rewrites `lang` | `research/root-attributes.json` | `npx playwright test root-attributes-real-chrome` |
+| Which attributes get translated, and does an opt-out cover them? | `alt`, `title`, `placeholder`, `aria-label` and a submit `value` are translated; `data-*` and `meta[name=description]` are left alone; `translate="no"` held on all three attribute probes | `research/attributes.json` | `npx playwright test attributes-real-chrome` |
+| Does Chrome translate a same-origin iframe? | yes, and it detaches inside it: 4 `<font>` wrappers in both host and child | `research/iframe-scope.json` | `npx playwright test iframe-scope-real-chrome` |
 | Crash, corruption, or correct? | no protection throws `NotFoundError: removeChild` twice and React unmounts the root; the community guard throws nothing and freezes the counter at 4, the price at `19.99`, keeps deleted text on screen and leaves a ternary's dead branch; translate-shield updates both values and swaps the branch cleanly | `research/comparison.json` | `npx playwright test comparison --workers=1` |
 
 Method, fixtures and sampling intervals: `research/recorder/README.md`, `tests/specs/` and
@@ -89,15 +92,18 @@ observed under an active translator, not a response time to the restore itself.
 
 ### Flicker per update
 
-| Update | Restore and retranslate | Mirror into the wrapper |
+Five replicates, four updates each, sampled every 50 ms for 1.5 s after each update. Every figure is quantised to 50 ms.
+
+| Across the 20 updates | Restore and retranslate | Mirror into the wrapper |
 |---|---|---|
-| 5 | 150 ms, 3 of 25 samples | 0 ms, 0 of 25 |
-| 6 | 200 ms, 4 of 25 samples | 0 ms, 0 of 25 |
-| 7 | 200 ms, 4 of 25 samples | 0 ms, 0 of 25 |
-| 8 | 150 ms, 3 of 25 samples | 0 ms, 0 of 25 |
-| total | 700 ms | 0 ms |
+| shortest update | 100 ms, 2 of 25 samples | 0 ms, 0 of 25 |
+| median update | 150 ms, 3 of 25 samples | 0 ms, 0 of 25 |
+| longest update | 150 ms, 3 of 25 samples | 0 ms, 0 of 25 |
+| a sequence of four | 500 to 600 ms | 0 ms |
 
 Both strategies ended each update on the correct Dutch text.
+
+An earlier single run recorded 150 to 200 ms per update and 700 ms per sequence. None of the five replicates reproduces it, so the report keeps every replicate rather than one run's numbers.
 
 ## Numbers and plural forms
 
