@@ -1,0 +1,62 @@
+:root {
+  --plate: #151e24;
+  --ink: #dfe7ec;
+  --ink-soft: #7d8f9b;
+  --rule: #26343d;
+  --phosphor: #ffb545;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--plate);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+body {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.specimen {
+  padding: 12px 18px;
+  display: grid;
+  gap: 1px;
+}
+
+.specimen p { margin: 0; }
+
+#lights, #total {
+  font-size: 18px;
+  color: var(--phosphor);
+}
+
+#conditional, #ternary, #protected {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  line-height: 1.42;
+  border-top: 1px solid var(--rule);
+  padding-top: 4px;
+  margin-top: 3px;
+}
+
+#protected .notranslate { color: var(--ink); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .specimen > * {
+    animation: plate-in 320ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+  .specimen > *:nth-child(2) { animation-delay: 50ms; }
+  .specimen > *:nth-child(3) { animation-delay: 100ms; }
+  .specimen > *:nth-child(4) { animation-delay: 150ms; }
+  .specimen > *:nth-child(5) { animation-delay: 200ms; }
+}
+
+@keyframes plate-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}

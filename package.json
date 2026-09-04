@@ -1,6 +1,6 @@
 {
   "name": "translate-shield",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Keeps React and Next.js apps correct when a browser translator rewrites the DOM: no crash, no frozen values, and no flash of the original language.",
   "keywords": [
     "google-translate",
@@ -69,7 +69,9 @@
     "verify": "npm run typecheck && npm run build && npm run smoke && npx publint --strict && npx @arethetypeswrong/cli --pack .",
     "prepublishOnly": "npm run typecheck && npm run build && npm run smoke && npx publint --strict",
     "postbuild": "node scripts/assert-directives.mjs",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "demo": "npm run dev -w demo",
+    "build:demo": "npm run build -w demo"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.0",
@@ -85,7 +87,8 @@
     "vitest": "^2.1.0"
   },
   "workspaces": [
-    "tests/app"
+    "tests/app",
+    "demo"
   ],
   "engines": {
     "node": ">=18"

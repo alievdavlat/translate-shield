@@ -1,0 +1,45 @@
+{
+  "schema": "translate-shield/demo-page/2",
+  "target": "nl",
+  "patchedInFrames": {
+    "unshielded": false,
+    "shielded": true
+  },
+  "beforeRun": {
+    "unshielded": {
+      "onScreen": "Er zijn 4 lampen!",
+      "reactState": "4",
+      "verdict": "still working"
+    },
+    "shielded": {
+      "onScreen": "Er zijn 4 lampen!",
+      "reactState": "4",
+      "verdict": "still working"
+    }
+  },
+  "afterRun": {
+    "unshielded": {
+      "onScreen": "not yet",
+      "reactState": "0",
+      "verdict": "crashed, the app is gone"
+    },
+    "shielded": {
+      "onScreen": "Er zijn 7 lampen!",
+      "reactState": "7",
+      "verdict": "still working"
+    }
+  },
+  "stillEnabledAfterCrash": true,
+  "afterReset": {
+    "unshielded": {
+      "onScreen": "There are 4 lights!",
+      "reactState": "4",
+      "verdict": "still working"
+    },
+    "shielded": {
+      "onScreen": "There are 4 lights!",
+      "reactState": "4",
+      "verdict": "still working"
+    }
+  }
+}
