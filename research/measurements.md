@@ -57,8 +57,8 @@ does not enter shadow roots.
 
 | Question | Result | Raw file | Command |
 |---|---|---|---|
-| What wakes a translator that has gone idle? | `element.scrollIntoView()` on the node, at 158 ms. Ten other candidates and a no-signal control did nothing within 10 s | `research/provocation.json` | `npx playwright test provocation` |
-| Does Chrome repair a restored source-language node? | in the viewport, after 211 ms; off screen, not within 15 s | `research/visibility-confound.json` | `npx playwright test visibility-confound` |
+| What wakes a translator that has gone idle? | `element.scrollIntoView()` on the node, at 168 ms. Nine other signals and a no-signal control did nothing within 10 s | `research/provocation.json` | `npx playwright test provocation` |
+| Does Chrome repair a restored source-language node? | in the viewport, after 210 ms; off screen, not within 15 s | `research/visibility-confound.json` | `npx playwright test visibility-confound` |
 | What does restore-and-retranslate cost the reader? | 100 to 150 ms of source-language text per update, 500 to 600 ms across a sequence of four, over five replicates. Mirroring into the wrapper: 0 ms in all twenty updates | `research/flicker.json` | `npx playwright test flicker` |
 | Does a shielded value survive Chrome's own translator? | nl: unprotected freezes at 4, `translation-resilience` shows `There are 7 lights!` in English, translate-shield shows `Er zijn 7 lampen!`. ru: translate-shield refuses the merge and shows the English string | `research/head-to-head-real-chrome.json` | `npx playwright test head-to-head-real-chrome` |
 | What does a translator write onto `<html>` itself? | Chrome rewrites `lang` from `en` to `ru` and adds `class="translated-ltr"` where there was no class. Every engine recorded rewrites `lang` | `research/root-attributes.json` | `npx playwright test root-attributes-real-chrome` |
@@ -74,7 +74,7 @@ sampled every 50 ms across a 1500 ms window.
 
 | Signal | Kind | Reaction |
 |---|---|---|
-| `scrollIntoView` on the node | in-page | 158 ms, text changed to Dutch |
+| `scrollIntoView` on the node | in-page | 168 ms, text changed to Dutch |
 | none (control) | none | none within 10 s |
 | forced layout read | in-page | none within 10 s |
 | synthetic `visibilitychange` | in-page | none within 10 s |
@@ -87,7 +87,7 @@ sampled every 50 ms across a 1500 ms window.
 | trusted mouse move | trusted input | none within 10 s |
 
 All eleven rows carry `reachedIdle: true`, `baselineHeld: true` and `valid: true`. The four
-`research/visibility-confound.json` rows carry `reachedIdle: false`, so 211 ms is a repair latency
+`research/visibility-confound.json` rows carry `reachedIdle: false`, so 210 ms is a repair latency
 observed under an active translator, not a response time to the restore itself.
 
 ### Flicker per update
@@ -132,7 +132,9 @@ plural pair was captured.
 | Number or claim | Why it fell | What replaced it |
 |---|---|---|
 | The first head-to-head run | `translation-resilience` silently failed to load and nothing in the harness checked, so its arm measured an unprotected page. No raw file was kept, so it cannot be re-examined | `research/head-to-head-real-chrome.json`, which now keeps only runs where every protected arm reports patched `Node.prototype` methods and a present global, the `patchedMethods` column |
-| Restore-and-retranslate never recovers | The probe sat below the fold, where Chrome does not translate at all | `research/visibility-confound.json`: the same restore in view is repaired after 211 ms. The surviving claim is narrower, that a restored node is repaired only while it is in the viewport |
+| Restore-and-retranslate never recovers | The probe sat below the fold, where Chrome does not translate at all | `research/visibility-confound.json`: the same restore in view is repaired after 210 ms. The surviving claim is narrower, that a restored node is repaired only while it is in the viewport |
+| `scrollIntoView` woke Chrome at 158 ms, and a restored node was repaired in 211 ms | Both were transcribed from an earlier run. `research/provocation.json` records `reactedAfterMs: 168` and `research/visibility-confound.json` records `210`. Prose and evidence disagreed for two days | The files' own numbers, 168 ms and 210 ms. Found by re-reading the raw JSON rather than the prose |
+| Eleven signals were fired at an idle translator | `research/provocation.json` has eleven rows, but one is `none (control)` with `kind: "none"`. Counting it as a signal inflated both the total and the number that failed | Ten signals and a no-signal control. One worked, nine did nothing |
 
 ## Not measured
 

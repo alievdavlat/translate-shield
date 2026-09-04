@@ -38,7 +38,7 @@ on Edge and Firefox both panels correctly behave the same and the page says so.
 
 ## What the reader sees
 
-Four updates to a value in view, real Chrome, live Dutch translation.
+Four updates to a value in view, page translated to Dutch.
 
 | | No protection | The pasted crash guard | A restore-based library | translate-shield |
 |---|---|---|---|---|
@@ -48,9 +48,11 @@ Four updates to a value in view, real Chrome, live Dutch translation.
 | Language while updating | n/a | n/a | 100-150 ms of source language per update | 0 ms |
 | Text when the reader looks | `Er zijn 4 lampen!`, stale | n/a | `There are 7 lights!` | `Er zijn 7 lampen!` |
 
-First three rows: `research/comparison.json`. Language row: `research/flicker.json`, five
-replicates of four updates, where restore-and-retranslate spends 500 to 600 ms of the sequence in
-source language and mirroring 0 ms in all twenty. Last row:
+First three rows: `research/comparison.json`, produced by the testbed's own scripted translator,
+which reproduces Google's wrapper structure and its detachment so all four arms can be driven
+identically. The last two rows are real Chrome with its own translator: `research/flicker.json`,
+five replicates of four updates, where restore-and-retranslate spends 500 to 600 ms of the
+sequence in source language and mirroring 0 ms in all twenty, and
 `research/head-to-head-real-chrome.json`.
 
 ## Next.js

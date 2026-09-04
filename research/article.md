@@ -43,11 +43,11 @@ One detection trap. The usual advice is to recognise Google's wrapper by `vertic
 
 ## Chrome translates the viewport, not the page
 
-Eleven signals, fired from a proven idle state, each against the same untranslated node. One worked. The other ten did nothing within 10 seconds (`research/provocation.json`, `npx playwright test provocation`).
+Ten signals and a no-signal control, fired from a proven idle state, each against the same untranslated node. One worked. The other nine did nothing within 10 seconds (`research/provocation.json`, `npx playwright test provocation`).
 
 | Signal | Translated? |
 |---|---|
-| `element.scrollIntoView()` | yes, after 158ms |
+| `element.scrollIntoView()` | yes, after 168ms |
 | no signal (control) | no |
 | forced layout read | no |
 | synthetic `visibilitychange` | no |
@@ -81,7 +81,7 @@ Chrome's translator is not a MutationObserver over your page. It re-scans what b
 
 This study had already written down that a restored text node is never re-translated. That probe sat below the fold.
 
-With the element in view, Chrome repaired the restored node in 211ms. Off screen it never did, however long the test waited (`research/visibility-confound.json`). The control arm in the same file caught it: text written into the translator's wrapper displayed immediately in both placements, and was never overwritten. A probe that only ever ran below the fold would have shipped the wrong claim.
+With the element in view, Chrome repaired the restored node in 210ms. Off screen it never did, however long the test waited (`research/visibility-confound.json`). The control arm in the same file caught it: text written into the translator's wrapper displayed immediately in both placements, and was never overwritten. A probe that only ever ran below the fold would have shipped the wrong claim.
 
 Two more fell the same way. A head-to-head was invalidated on its first run because one library had silently failed to load: the bundle ends with a `//# sourceMappingURL=` line comment, and an appended global assignment landed inside it. Every arm now proves which `Node.prototype` methods it patched. And an overclaim about Firefox: three runs with a once-a-second counter all reached 6 on screen, but two ended in French and one in English (`research/fingerprints/firefox-builtin-fr.json` and two replicates in `research/fingerprints/attempts/`). Under sustained updates an in-place engine can fall behind and show source-language text.
 
