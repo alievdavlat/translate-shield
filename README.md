@@ -29,6 +29,13 @@ engines that do not need it. No dependencies, about 15 kB packed.
 
 Firefox and Edge readers do not hit this bug. Check [Browser support](#browser-support) first.
 
+## See it happen
+
+[Live demo](https://google-translate-simulation.netlify.app/). Two identical React apps side by
+side, one shielded and one not, while your own browser translates them. Turn translation on and the
+unprotected one freezes and then unmounts. It runs on real translation rather than a recording, so
+on Edge and Firefox both panels correctly behave the same and the page says so.
+
 ## What the reader sees
 
 Four updates to a value in view, real Chrome, live Dutch translation.
